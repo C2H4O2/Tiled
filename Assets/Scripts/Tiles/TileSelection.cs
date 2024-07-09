@@ -8,6 +8,7 @@ public class TileSelection : MonoBehaviour
     [SerializeField] private Tilemap tilemap;
 
     private Vector2Int highlightedTilePosition = Vector2Int.zero;
+    public Vector2Int HighlightedTilePosition1 { get => highlightedTilePosition; }
 
     private void Update() {
         Vector3 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -24,6 +25,8 @@ public class TileSelection : MonoBehaviour
     {
         get { return highlightedTilePosition; }
     }
+
+    
 
     public bool IsHighlightedTileClicked(Vector2 clickedPosition)
     {
