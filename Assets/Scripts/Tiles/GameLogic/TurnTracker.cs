@@ -24,7 +24,9 @@ public class TurnTracker : MonoBehaviour
     private void Start() {
         InitializeTurnOrder();
         RandomiseTurn();
+        
         currentPlayerTurn = turnOrder[0]; // Set the initial player turn
+        onTurnChange.Invoke();
     }
     
     private void InitializeTurnOrder() 
@@ -52,9 +54,9 @@ public class TurnTracker : MonoBehaviour
     }
 
     public void CycleThroughTurn()
-    {
-        onTurnChange.Invoke();
+    {  
         turn += 1;
         currentPlayerTurn = turnOrder[turn % turnOrder.Length];
+        onTurnChange.Invoke();
     }
 }

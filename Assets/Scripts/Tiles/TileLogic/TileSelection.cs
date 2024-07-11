@@ -11,7 +11,7 @@ public class TileSelection : MonoBehaviour
 
     private void Update() {
         Vector3 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        mouseWorldPos.z = 0; // Ensure Z-axis is zero for 2D calculations
+        mouseWorldPos.z = 0;
 
         Vector3Int cellPos = tilemap.WorldToCell(mouseWorldPos);
         highlightedTilePosition = new Vector2Int(cellPos.x, cellPos.y);
