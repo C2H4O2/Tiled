@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.Events;
 public class TurnTracker : MonoBehaviour
 {
     [SerializeField] private Player[] teamOnePlayers;
@@ -9,8 +9,9 @@ public class TurnTracker : MonoBehaviour
     [SerializeField] private Player[] turnOrder;
     [SerializeField] private ushort turn = 0;
     [SerializeField] private Player currentPlayerTurn;
+    [SerializeField] private UnityEvent onTurnChange;
 
-    private Player QueryTurn()
+    public Player QueryTurn()
     {
         return currentPlayerTurn;
     }
@@ -52,6 +53,7 @@ public class TurnTracker : MonoBehaviour
 
     public void CycleThroughTurn()
     {
+        onTurnChange.Invoke();
         turn += 1;
         currentPlayerTurn = turnOrder[turn % turnOrder.Length];
     }
