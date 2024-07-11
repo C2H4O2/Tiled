@@ -13,7 +13,7 @@ public class AdjacentCoordinateDisplayer : MonoBehaviour
     }
 
     private void Update() {
-        
+      
         Vector2Int[] adjacentTiles = neighbourTileFinder.GetAdjacentTilePositions();
 
         string coordinatesText = $"Adjacent Tiles:\n";
