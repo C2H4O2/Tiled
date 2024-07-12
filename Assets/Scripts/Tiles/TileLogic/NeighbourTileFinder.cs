@@ -1,43 +1,43 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 public class NeighbourTileFinder : MonoBehaviour
 {
-    private TileSelection tileSelection;
-    private Vector2Int highlightedTilePosition;
-    private Vector2Int[] adjacentTilePositions;
+    public Vector2Int[] FindAdjacentTiles(Vector2Int currentTilePosition, Tilemap tilemap)
+    {
+        List<Vector2Int> neighbours = new List<Vector2Int>();
 
-    private void Awake() {
-        tileSelection = FindAnyObjectByType<TileSelection>();
-    }
-
-    private void Update() {
-        highlightedTilePosition = tileSelection.HighlightedTilePosition;
-
-        List<Vector2Int> neighbors = new List<Vector2Int>();
-
-        if (highlightedTilePosition.y % 2 == 1) {
-            neighbors.Add(new Vector2Int(highlightedTilePosition.x, highlightedTilePosition.y + 1));
-            neighbors.Add(new Vector2Int(highlightedTilePosition.x + 1, highlightedTilePosition.y + 1));
-            neighbors.Add(new Vector2Int(highlightedTilePosition.x - 1, highlightedTilePosition.y));
-            neighbors.Add(new Vector2Int(highlightedTilePosition.x + 1, highlightedTilePosition.y));
-            neighbors.Add(new Vector2Int(highlightedTilePosition.x, highlightedTilePosition.y - 1));
-            neighbors.Add(new Vector2Int(highlightedTilePosition.x + 1, highlightedTilePosition.y - 1));
+        if (currentTilePosition.y % 2 == 1) {
+            neighbours.Add(new Vector2Int(currentTilePosition.x, currentTilePosition.y + 1));
+            neighbours.Add(new Vector2Int(currentTilePosition.x + 1, currentTilePosition.y + 1));
+            neighbours.Add(new Vector2Int(currentTilePosition.x - 1, currentTilePosition.y));
+            neighbours.Add(new Vector2Int(currentTilePosition.x + 1, currentTilePosition.y));
+            neighbours.Add(new Vector2Int(currentTilePosition.x, currentTilePosition.y - 1));
+            neighbours.Add(new Vector2Int(currentTilePosition.x + 1, currentTilePosition.y - 1));
         } else {
-            neighbors.Add(new Vector2Int(highlightedTilePosition.x, highlightedTilePosition.y + 1));
-            neighbors.Add(new Vector2Int(highlightedTilePosition.x - 1, highlightedTilePosition.y + 1));
-            neighbors.Add(new Vector2Int(highlightedTilePosition.x - 1, highlightedTilePosition.y));
-            neighbors.Add(new Vector2Int(highlightedTilePosition.x + 1, highlightedTilePosition.y));
-            neighbors.Add(new Vector2Int(highlightedTilePosition.x, highlightedTilePosition.y - 1));
-            neighbors.Add(new Vector2Int(highlightedTilePosition.x - 1, highlightedTilePosition.y - 1));
+            neighbours.Add(new Vector2Int(currentTilePosition.x, currentTilePosition.y + 1));
+            neighbours.Add(new Vector2Int(currentTilePosition.x - 1, currentTilePosition.y + 1));
+            neighbours.Add(new Vector2Int(currentTilePosition.x - 1, currentTilePosition.y));
+            neighbours.Add(new Vector2Int(currentTilePosition.x + 1, currentTilePosition.y));
+            neighbours.Add(new Vector2Int(currentTilePosition.x, currentTilePosition.y - 1));
+            neighbours.Add(new Vector2Int(currentTilePosition.x - 1, currentTilePosition.y - 1));
         }
 
-        adjacentTilePositions = neighbors.ToArray();
-    }
+        // Collect the elements to be removed
+        List<Vector2Int> toRemove = new List<Vector2Int>();
+        foreach (Vector2Int neighbour in neighbours) {
+            if (!tilemap.HasTile((Vector3Int)neighbour)) {
+                toRemove.Add(neighbour);
+            }
+        }
 
-    public Vector2Int[] GetAdjacentTilePositions()
-    {
-        return adjacentTilePositions;
+        // Remove the collected elements
+        foreach (Vector2Int neighbour in toRemove) {
+            neighbours.Remove(neighbour);
+        }
+
+        return neighbours.ToArray();
     }
 }

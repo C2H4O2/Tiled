@@ -16,7 +16,7 @@ public class TurnTracker : MonoBehaviour
         return currentPlayerTurn;
     }
 
-    private int Roll6SidedDice()
+    public int Roll6SidedDice()
     {
         return Random.Range(1, 7); // include 1 exclude 7
     }
