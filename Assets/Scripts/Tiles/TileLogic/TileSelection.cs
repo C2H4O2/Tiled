@@ -8,7 +8,14 @@ public class TileSelection : MonoBehaviour
     [SerializeField] private Tilemap tilemap;
 
     private Vector2Int highlightedTilePosition = Vector2Int.zero;
+  
 
+    public Vector2Int HighlightedTilePosition
+    {
+        get { return highlightedTilePosition; }
+    }
+
+    public Tilemap Tilemap { get => tilemap; }
     private void Update() {
         Vector3 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         mouseWorldPos.z = 0;
@@ -19,13 +26,6 @@ public class TileSelection : MonoBehaviour
         Vector3 worldPos = Tilemap.CellToWorld(cellPos);
         transform.position = worldPos;
     }
-
-    public Vector2Int HighlightedTilePosition
-    {
-        get { return highlightedTilePosition; }
-    }
-
-    public Tilemap Tilemap { get => tilemap; }
 
     public bool IsHighlightedTileClicked(Vector2 clickedPosition)
     {
@@ -40,17 +40,17 @@ public class TileSelection : MonoBehaviour
         return new Vector2(worldPos.x, worldPos.y);
     }
 
-    // Converts a cell position (in grid coordinates) to world position
+
     public Vector2 CellToWorld(Vector2Int cellPosition)
-    {
+    {    // Converts a cell position (in grid coordinates) to world position
         Vector3Int cellPos3D = new Vector3Int(cellPosition.x, cellPosition.y, 0);
         Vector3 worldPos3D = Tilemap.CellToWorld(cellPos3D);
         return new Vector2(worldPos3D.x, worldPos3D.y);
     }
 
-    // Converts a world position to cell position (in grid coordinates)
+
     public Vector2Int WorldToCell(Vector2 worldPosition)
-    {
+    {    // Converts a world position to cell position (in grid coordinates)
         Vector3 worldPos3D = new Vector3(worldPosition.x, worldPosition.y, 0);
         Vector3Int cellPos3D = Tilemap.WorldToCell(worldPos3D);
         return new Vector2Int(cellPos3D.x, cellPos3D.y);
