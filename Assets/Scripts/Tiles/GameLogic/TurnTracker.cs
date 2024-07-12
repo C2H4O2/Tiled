@@ -9,22 +9,27 @@ public class TurnTracker : MonoBehaviour
     [SerializeField] private Player[] turnOrder;
     [SerializeField] private ushort turn = 0;
     [SerializeField] private Player currentPlayerTurn;
-    [SerializeField] private UnityEvent onTurnChange;
+    [SerializeField] private UnityEvent onTurnChange; //change camera
+
+    public UnityEvent OnTurnChange { get => onTurnChange; }
+
 
     public Player QueryTurn()
     {
         return currentPlayerTurn;
     }
 
-    private int Roll6SidedDice()
+    public int RollDice(int sides)
     {
-        return Random.Range(1, 7); // include 1 exclude 7
+        return Random.Range(1, sides+1); // include 1 exclude 7
     }
 
     private void Start() {
         InitializeTurnOrder();
         RandomiseTurn();
+        
         currentPlayerTurn = turnOrder[0]; // Set the initial player turn
+        OnTurnChange.Invoke();
     }
     
     private void InitializeTurnOrder() 
@@ -52,9 +57,9 @@ public class TurnTracker : MonoBehaviour
     }
 
     public void CycleThroughTurn()
-    {
-        onTurnChange.Invoke();
+    {  
         turn += 1;
         currentPlayerTurn = turnOrder[turn % turnOrder.Length];
+        OnTurnChange.Invoke();
     }
 }
