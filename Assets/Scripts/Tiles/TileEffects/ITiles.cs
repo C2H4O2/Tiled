@@ -1,4 +1,4 @@
-public interface ITiles
+public interface ITile
 {
     public void OnLand();
 }

@@ -16,6 +16,8 @@ public class Player : MonoBehaviour
     private TileSelection tileSelection;
     private NeighbourTileFinder neighbourTileFinder;
     private DragTiles dragTiles;
+    
+
 
     public string NameTag { get => nameTag; }
 
@@ -34,6 +36,9 @@ public class Player : MonoBehaviour
             UpdateAdjacentTiles();
             
             if(adjacentTilesToPlayer.Contains(tileSelection.HighlightedTilePosition)){
+                if(dragTiles.DraggingTile) {
+
+                }
                 Debug.Log("Move to" + tileSelection.HighlightedTilePosition);
                 MovePlayer(tileSelection.HighlightedTilePosition);
                 turnTracker.MovesLeft-=1;
