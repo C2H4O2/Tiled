@@ -6,7 +6,7 @@ using UnityEngine;
 public class CameraBehaviour : MonoBehaviour
 {
     private TurnTracker turnTracker;
-    private void Start() {
+    private void Awake() {
         turnTracker = FindAnyObjectByType<TurnTracker>();
     }
     [SerializeField] private CinemachineVirtualCamera vCamera;

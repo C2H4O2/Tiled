@@ -6,7 +6,7 @@ using UnityEngine;
 public class CurrentPlayerTurnDisplayer : MonoBehaviour
 {
     [SerializeField] private TMP_Text currentPlayerTurnText;
-    [SerializeField] private TurnTracker turnTracker;
+    private TurnTracker turnTracker;
     private void Awake() {
         turnTracker = FindAnyObjectByType<TurnTracker>();
     }

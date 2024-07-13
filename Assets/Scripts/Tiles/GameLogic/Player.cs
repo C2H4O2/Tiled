@@ -18,7 +18,7 @@ public class Player : MonoBehaviour
     private NeighbourTileFinder neighbourTileFinder;
 
     public string NameTag { get => nameTag; }
-
+    public int MovesLeft { get => movesLeft; }
 
     private void Awake() {
         turnTracker = FindAnyObjectByType<TurnTracker>();
