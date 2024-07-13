@@ -10,9 +10,11 @@ public class MovesLeftDisplayer : MonoBehaviour
     private void Awake() {
         turnTracker = FindAnyObjectByType<TurnTracker>();
     }
+    private void Update() {
+        ChangeMovesLeftText();
+    }
     public void ChangeMovesLeftText()
     {
-        Debug.Log(turnTracker.QueryTurn().MovesLeft);
-        movesLeftText.text = "Moves Left: " + turnTracker.QueryTurn().MovesLeft;
+        movesLeftText.text = "Moves Left: " + turnTracker.MovesLeft;
     }
 }
