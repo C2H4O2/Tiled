@@ -7,6 +7,7 @@ using System.Linq;
 
 public class Player : MonoBehaviour
 {
+    [SerializeField] private string nameTag;
     [SerializeField] private Vector2Int startingPosition;
     [SerializeField] private Vector2Int playerPosition;
     [SerializeField] private int movesLeft;
@@ -15,6 +16,10 @@ public class Player : MonoBehaviour
     private TurnTracker turnTracker;
     private TileSelection tileSelection;
     private NeighbourTileFinder neighbourTileFinder;
+
+    public string NameTag { get => nameTag; }
+
+
     private void Awake() {
         turnTracker = FindAnyObjectByType<TurnTracker>();
         tileSelection = FindAnyObjectByType<TileSelection>();
