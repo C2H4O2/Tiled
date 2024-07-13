@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
@@ -9,7 +10,7 @@ public class NeighbourTileFinder : MonoBehaviour
     {
         List<Vector2Int> neighbours = new List<Vector2Int>();
 
-        if (currentTilePosition.y % 2 == 1) {
+        if (math.abs(currentTilePosition.y) % 2 == 1) {
             neighbours.Add(new Vector2Int(currentTilePosition.x, currentTilePosition.y + 1));
             neighbours.Add(new Vector2Int(currentTilePosition.x + 1, currentTilePosition.y + 1));
             neighbours.Add(new Vector2Int(currentTilePosition.x - 1, currentTilePosition.y));

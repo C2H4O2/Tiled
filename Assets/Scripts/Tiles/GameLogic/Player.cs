@@ -26,7 +26,7 @@ public class Player : MonoBehaviour
     }
 
     private void Update() {
-        if(turnTracker.QueryTurn() == this && Input.GetMouseButtonDown(0) && movesLeft != 0) {
+        if(turnTracker.QueryTurn() == this && Input.GetMouseButtonUp(0) && movesLeft != 0) {
             UpdateAdjacentTiles();
             
             if(adjacentTilesToPlayer.Contains(tileSelection.HighlightedTilePosition)){
