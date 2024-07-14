@@ -5,14 +5,14 @@ using UnityEngine.EventSystems;
 
 public class DragTiles : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHandler
 {
-    private bool draggingTile = false;
+    private TurnTracker turnTracker;
+    
     private Vector2 defaultPosition;
     private Transform defaultParent;
     private Canvas canvas;
 
-    public bool DraggingTile { get => draggingTile; }
-
     private void Start() {
+        turnTracker = FindAnyObjectByType<TurnTracker>();
         defaultPosition = transform.position;
         defaultParent = transform.parent;
         canvas = GetComponentInParent<Canvas>();
@@ -20,7 +20,7 @@ public class DragTiles : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDra
 
     public void OnBeginDrag(PointerEventData eventData)
     {
-        draggingTile = true;
+        turnTracker.DraggingTile = true;
         defaultPosition = transform.position;
         defaultParent = transform.parent;
        
@@ -34,7 +34,7 @@ public class DragTiles : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDra
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        draggingTile = false;
+        turnTracker.DraggingTile = false;
 
 
         if (IsOutsideLayoutGroup())

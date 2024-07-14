@@ -10,10 +10,7 @@ public class TileSelection : MonoBehaviour
     private Vector2Int highlightedTilePosition = Vector2Int.zero;
   
 
-    public Vector2Int HighlightedTilePosition
-    {
-        get { return highlightedTilePosition; }
-    }
+    public Vector2Int HighlightedTilePosition { get => highlightedTilePosition; }
 
     public Tilemap Tilemap { get => tilemap; }
     private void Update() {

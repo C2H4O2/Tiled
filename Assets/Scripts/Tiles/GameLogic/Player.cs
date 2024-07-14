@@ -15,7 +15,7 @@ public class Player : MonoBehaviour
     private TurnTracker turnTracker;
     private TileSelection tileSelection;
     private NeighbourTileFinder neighbourTileFinder;
-    private DragTiles dragTiles;
+
     
 
 
@@ -25,20 +25,16 @@ public class Player : MonoBehaviour
         turnTracker = FindAnyObjectByType<TurnTracker>();
         tileSelection = FindAnyObjectByType<TileSelection>();
         neighbourTileFinder = FindAnyObjectByType<NeighbourTileFinder>();
-        dragTiles = FindAnyObjectByType<DragTiles>();
+
     }
     private void Start() {
         MovePlayer(startingPosition);
+        UpdateAdjacentTiles();
     }
 
     private void Update() {
-        if(turnTracker.QueryTurn() == this && Input.GetMouseButtonUp(0) && turnTracker.MovesLeft != 0) {
-            UpdateAdjacentTiles();
-            
+        if(turnTracker.QueryTurn() == this && Input.GetMouseButtonUp(0) && turnTracker.MovesLeft != 0 && !turnTracker.DraggingTile) {
             if(adjacentTilesToPlayer.Contains(tileSelection.HighlightedTilePosition)){
-                if(dragTiles.DraggingTile) {
-
-                }
                 Debug.Log("Move to" + tileSelection.HighlightedTilePosition);
                 MovePlayer(tileSelection.HighlightedTilePosition);
                 turnTracker.MovesLeft-=1;
