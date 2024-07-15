@@ -8,7 +8,6 @@ public class PlaceTiles : MonoBehaviour
 
     [SerializeField] private Tilemap boardTiles;
     [SerializeField] private Tilemap placedTiles;
-    [SerializeField] private 
     void Start()
     {
         

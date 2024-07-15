@@ -49,6 +49,8 @@ public class DragTiles : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDra
         {
             Debug.Log("place tile");
             placeTiles.PlaceTile(tile,tileSelection.HighlightedTilePosition);
+            turnTracker.MovesLeft-=1;
+            turnTracker.QueryTurn().UpdateAdjacentTiles();
         }
         if (IsOutsideLayoutGroup())
         {   // Return the tile back to its original position and parent

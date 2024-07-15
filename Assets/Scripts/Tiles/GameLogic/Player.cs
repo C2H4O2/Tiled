@@ -17,7 +17,6 @@ public class Player : MonoBehaviour
     private NeighbourTileFinder neighbourTileFinder;
 
     public string NameTag { get => nameTag; }
-    public Vector2Int[] AdjacentTilesToPlayer { get => adjacentTilesToPlayer; }
 
     private void Awake() {
         turnTracker = FindAnyObjectByType<TurnTracker>();
@@ -55,7 +54,7 @@ public class Player : MonoBehaviour
         playerPosition = cellPosition;
     }
 
-    private void UpdateAdjacentTiles() {
-        adjacentTilesToPlayer = neighbourTileFinder.FindAdjacentTiles(playerPosition, tileSelection.Tilemap);
+    public void UpdateAdjacentTiles() {
+        adjacentTilesToPlayer = neighbourTileFinder.FindAdjacentTiles(playerPosition, tileSelection.PlacedTiles);
     }
 }
