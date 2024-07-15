@@ -5,9 +5,10 @@ using UnityEngine.Tilemaps;
 
 public class PlaceTiles : MonoBehaviour
 {
-    [SerializeField] private Tile tileToPlace;
+
     [SerializeField] private Tilemap boardTiles;
     [SerializeField] private Tilemap placedTiles;
+    [SerializeField] private 
     void Start()
     {
         
@@ -17,5 +18,9 @@ public class PlaceTiles : MonoBehaviour
     void Update()
     {
         
+    }
+    public void PlaceTile(Tile tileToPlace, Vector2Int tileToPlacePosition)
+    {
+        placedTiles.SetTile((Vector3Int)tileToPlacePosition, tileToPlace);
     }
 }

@@ -88,3 +88,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eaf56aac07550b34e8c929bb01fab435, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tile: {fileID: 11400000, guid: 2ec6185e3b08a09458518a72815900fa, type: 2}
+  onPlaceTile:
+    m_PersistentCalls:
+      m_Calls: []

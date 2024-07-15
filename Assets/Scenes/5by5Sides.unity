@@ -807,14 +807,32 @@ MonoBehaviour:
   m_ShowCameraFrustum: 1
   m_IgnoreTimeScale: 0
   m_WorldUpOverride: {fileID: 0}
-  m_UpdateMethod: 2
+  m_UpdateMethod: 1
   m_BlendUpdateMethod: 1
   m_DefaultBlend:
-    m_Style: 1
+    m_Style: 7
     m_Time: 2
     m_CustomCurve:
       serializedVersion: 2
-      m_Curve: []
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0.45758057
+        inSlope: 0.08502067
+        outSlope: 0.08502067
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.11096081
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0.1438335
+        outSlope: 0.1438335
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.27875507
+        outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4

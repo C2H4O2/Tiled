@@ -16,16 +16,13 @@ public class Player : MonoBehaviour
     private TileSelection tileSelection;
     private NeighbourTileFinder neighbourTileFinder;
 
-    
-
-
     public string NameTag { get => nameTag; }
+    public Vector2Int[] AdjacentTilesToPlayer { get => adjacentTilesToPlayer; }
 
     private void Awake() {
         turnTracker = FindAnyObjectByType<TurnTracker>();
         tileSelection = FindAnyObjectByType<TileSelection>();
         neighbourTileFinder = FindAnyObjectByType<NeighbourTileFinder>();
-
     }
     private void Start() {
         MovePlayer(startingPosition);
@@ -41,11 +38,16 @@ public class Player : MonoBehaviour
                 UpdateAdjacentTiles();
             }
         }
-
+        
         if(turnTracker.MovesLeft <= 0 && turnTracker.QueryTurn() == this) {
+            StartCoroutine(DelayForSeconds(1f));
             Debug.Log("Switch turns");
             turnTracker.CycleThroughTurn();
         }   
+    }
+
+    private IEnumerator DelayForSeconds(float seconds) {
+        yield return new WaitForSeconds(seconds);
     }
 
     private void MovePlayer(Vector2Int cellPosition) {

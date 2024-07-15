@@ -5,14 +5,14 @@ using UnityEngine.Tilemaps;
 
 public class TileSelection : MonoBehaviour
 {
-    [SerializeField] private Tilemap tilemap;
-
+    [SerializeField] private Tilemap boardTiles;
+    [SerializeField] private Tilemap placedTiles;
     private Vector2Int highlightedTilePosition = Vector2Int.zero;
   
 
     public Vector2Int HighlightedTilePosition { get => highlightedTilePosition; }
 
-    public Tilemap Tilemap { get => tilemap; }
+    public Tilemap Tilemap { get => boardTiles; }
     private void Update() {
         Vector3 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         mouseWorldPos.z = 0;
@@ -51,5 +51,11 @@ public class TileSelection : MonoBehaviour
         Vector3 worldPos3D = new Vector3(worldPosition.x, worldPosition.y, 0);
         Vector3Int cellPos3D = Tilemap.WorldToCell(worldPos3D);
         return new Vector2Int(cellPos3D.x, cellPos3D.y);
+    }
+
+    public bool PlacedTileAtPosition(Vector2Int cellPosition)
+    {
+        Debug.Log(placedTiles.HasTile((Vector3Int)cellPosition));
+        return placedTiles.HasTile((Vector3Int)cellPosition);
     }
 }
