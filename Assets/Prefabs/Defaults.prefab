@@ -231,10 +231,11 @@ MonoBehaviour:
   turnOrder: []
   turn: 0
   currentPlayerTurn: {fileID: 0}
+  movesLeft: 0
   onTurnChange:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6448386244209075553}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: CameraBehaviour, Assembly-CSharp
         m_MethodName: SwitchCameraTarget
         m_Mode: 1
@@ -246,6 +247,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  draggingTile: 0
 --- !u!1 &6372379166692542830
 GameObject:
   m_ObjectHideFlags: 0
@@ -314,7 +316,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9148866514843176921}
-  - component: {fileID: 6448386244209075553}
   m_Layer: 0
   m_Name: Camera Controller
   m_TagString: Untagged
@@ -337,19 +338,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 6734482463699204753}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6448386244209075553
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6646185632817529730}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b713b55f55d69644a47c8c960bf5207, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  vCamera: {fileID: 0}
 --- !u!1001 &5390292808919077654
 PrefabInstance:
   m_ObjectHideFlags: 0
