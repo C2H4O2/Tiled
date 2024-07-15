@@ -5,21 +5,20 @@ using UnityEngine.Tilemaps;
 
 public class PlaceTiles : MonoBehaviour
 {
-
     [SerializeField] private Tilemap boardTiles;
     [SerializeField] private Tilemap placedTiles;
-    void Start()
-    {
-        
+    [SerializeField] private Player[] players;
+    private void Awake() {
+        players = FindObjectsOfType<Player>();
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    
     public void PlaceTile(Tile tileToPlace, Vector2Int tileToPlacePosition)
     {
         placedTiles.SetTile((Vector3Int)tileToPlacePosition, tileToPlace);
+        foreach (Player player in players) {
+            player.UpdateAdjacentTiles();
+        }
     }
+
+    
 }

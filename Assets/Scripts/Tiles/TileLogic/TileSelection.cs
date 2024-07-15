@@ -8,7 +8,7 @@ public class TileSelection : MonoBehaviour
     [SerializeField] private Tilemap boardTiles;
     [SerializeField] private Tilemap placedTiles;
     private Vector2Int highlightedTilePosition = Vector2Int.zero;
-  
+    
 
     public Vector2Int HighlightedTilePosition { get => highlightedTilePosition; }
 

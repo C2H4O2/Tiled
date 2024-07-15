@@ -15,13 +15,16 @@ public class Player : MonoBehaviour
     private TurnTracker turnTracker;
     private TileSelection tileSelection;
     private NeighbourTileFinder neighbourTileFinder;
+    private PlayerTilePositions playerTilePositions;
 
     public string NameTag { get => nameTag; }
+    public Vector2Int PlayerPosition { get => playerPosition; }
 
     private void Awake() {
         turnTracker = FindAnyObjectByType<TurnTracker>();
         tileSelection = FindAnyObjectByType<TileSelection>();
         neighbourTileFinder = FindAnyObjectByType<NeighbourTileFinder>();
+        playerTilePositions = FindAnyObjectByType<PlayerTilePositions>();
     }
     private void Start() {
         MovePlayer(startingPosition);
@@ -29,13 +32,12 @@ public class Player : MonoBehaviour
     }
 
     private void Update() {
-        if(turnTracker.QueryTurn() == this && Input.GetMouseButtonUp(0) && turnTracker.MovesLeft != 0 && !turnTracker.DraggingTile) {
-            if(adjacentTilesToPlayer.Contains(tileSelection.HighlightedTilePosition)){
-                Debug.Log("Move to" + tileSelection.HighlightedTilePosition);
-                MovePlayer(tileSelection.HighlightedTilePosition);
-                turnTracker.MovesLeft-=1;
-                UpdateAdjacentTiles();
-            }
+        if(CanMove()) {
+            Debug.Log("Move to" + tileSelection.HighlightedTilePosition);
+            MovePlayer(tileSelection.HighlightedTilePosition);
+            turnTracker.MovesLeft-=1;
+            UpdateAdjacentTiles();
+            playerTilePositions.UpdateAllPlayerTilePositions();
         }
         
         if(turnTracker.MovesLeft <= 0 && turnTracker.QueryTurn() == this) {
@@ -43,6 +45,22 @@ public class Player : MonoBehaviour
             Debug.Log("Switch turns");
             turnTracker.CycleThroughTurn();
         }   
+    }
+    private bool CanMove() {
+        if(!(turnTracker.QueryTurn() == this)) 
+            return false;
+        if(turnTracker.MovesLeft <= 0)
+            return false;
+        if(!Input.GetMouseButtonUp(0))
+            return false;
+        if(turnTracker.DraggingTile)
+            return false;
+        if(!adjacentTilesToPlayer.Contains(tileSelection.HighlightedTilePosition))
+            return false;
+        if(playerTilePositions.PlayerPositions.Contains(tileSelection.HighlightedTilePosition))
+            return false;
+        else return true;
+
     }
 
     private IEnumerator DelayForSeconds(float seconds) {
