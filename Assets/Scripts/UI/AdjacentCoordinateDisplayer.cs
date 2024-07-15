@@ -16,7 +16,7 @@ public class AdjacentCoordinateDisplayer : MonoBehaviour
 
     private void Update() {
       
-        Vector2Int[] adjacentTiles = neighbourTileFinder.FindAdjacentTiles(tileSelection.HighlightedTilePosition, tileSelection.Tilemap);
+        Vector2Int[] adjacentTiles = neighbourTileFinder.FindAdjacentTiles(tileSelection.HighlightedTilePosition, tileSelection.BoardTile);
 
         string coordinatesText = $"Adjacent Tiles:\n";
         foreach (Vector2Int tile in adjacentTiles) {
