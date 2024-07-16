@@ -14,7 +14,7 @@ public class DragTiles : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDra
     private PlaceTiles placeTiles;
     private Vector2 defaultPosition;
 
-    [SerializeField] private EffectTile effectTile;
+    private EffectTile effectTile;
 
     private Transform defaultParent;
     private Canvas canvas;

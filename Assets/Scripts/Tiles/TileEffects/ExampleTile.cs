@@ -5,8 +5,9 @@ using UnityEngine.Tilemaps;
 
 public class ExampleTile : EffectTile
 {
+    TurnTracker turnTracker;
     public override void OnLand()
     {
-        throw new System.NotImplementedException();
+        Debug.Log("Landed");
     }
 }

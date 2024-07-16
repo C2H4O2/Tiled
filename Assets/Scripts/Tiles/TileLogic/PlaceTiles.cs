@@ -8,9 +8,10 @@ public class PlaceTiles : MonoBehaviour
     [SerializeField] private Tilemap boardTiles;
     [SerializeField] private Tilemap placedTiles;
     [SerializeField] private Player[] players;
-    [SerializeField] private EffectTilePositions effectTilePositions;
+    private EffectTilePositions effectTilePositions;
     private void Awake() {
         players = FindObjectsOfType<Player>();
+        effectTilePositions = FindAnyObjectByType<EffectTilePositions>();
     }
     
     public void PlaceTile(EffectTile effectTile, Vector2Int tileToPlacePosition)
