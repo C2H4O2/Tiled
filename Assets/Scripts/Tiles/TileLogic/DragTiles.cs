@@ -8,7 +8,7 @@ using UnityEngine.Tilemaps;
 
 public class DragTiles : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHandler
 {
-    [SerializeField] private Tile tile;
+    [SerializeField] private EffectTile effectTile;
     private TurnTracker turnTracker;
     private TileSelection tileSelection;
     private PlaceTiles placeTiles;
@@ -45,7 +45,7 @@ public class DragTiles : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDra
         && tileSelection.BoardTile.HasTile((Vector3Int)tileSelection.HighlightedTilePosition))
         {
             Debug.Log("place tile");
-            placeTiles.PlaceTile(tile,tileSelection.HighlightedTilePosition);
+            placeTiles.PlaceTile(effectTile,tileSelection.HighlightedTilePosition);
             turnTracker.MovesLeft-=1;
             turnTracker.QueryTurn().UpdateAdjacentTiles();
         }
