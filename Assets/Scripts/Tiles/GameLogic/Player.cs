@@ -35,7 +35,7 @@ public class Player : MonoBehaviour
 
     private void Update() {
         if(CanMove()) {
-            Debug.Log("Move to" + tileSelection.HighlightedTilePosition);
+            //Debug.Log("Move to" + tileSelection.HighlightedTilePosition);
             MovePlayer(tileSelection.HighlightedTilePosition);
             turnTracker.MovesLeft-=1;
             UpdateAdjacentTiles();
@@ -44,7 +44,7 @@ public class Player : MonoBehaviour
         
         if(turnTracker.MovesLeft <= 0 && turnTracker.QueryTurn() == this) {
             StartCoroutine(DelayForSeconds(1f));
-            Debug.Log("Switch turns");
+            //Debug.Log("Switch turns");
             turnTracker.CycleThroughTurn();
         }   
     }

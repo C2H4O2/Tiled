@@ -12,7 +12,7 @@ public class TurnIndicator : MonoBehaviour
     }
 
     public void MoveTurnIndicator() {
-        Debug.Log("moved");
+        //Debug.Log("moved");
 
         Transform currentPlayerTransform = turnTracker.QueryTurn().transform;
         indicatorArrow.transform.SetParent(currentPlayerTransform);
