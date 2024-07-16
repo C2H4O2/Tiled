@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7569254638216791265}
   - component: {fileID: 1263503339042224211}
   - component: {fileID: 197892467037603420}
+  - component: {fileID: 3887295046199131769}
   m_Layer: 5
   m_Name: Tile
   m_TagString: Untagged
@@ -29,7 +30,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -88,7 +89,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eaf56aac07550b34e8c929bb01fab435, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tile: {fileID: 11400000, guid: 2ec6185e3b08a09458518a72815900fa, type: 2}
-  onPlaceTile:
-    m_PersistentCalls:
-      m_Calls: []
+  effectTile: {fileID: 0}
+--- !u!114 &3887295046199131769
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4539180927304038756}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a494c782bb0d094bab4e1c6884377fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tileToPlace: {fileID: 0}
