@@ -15,10 +15,6 @@ public class DragTiles : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDra
     private Vector2 defaultPosition;
     private Transform defaultParent;
     private Canvas canvas;
-    [SerializeField] private UnityEvent onPlaceTile;
-    
-
-    public UnityEvent OnPlaceTile { get => onPlaceTile; }
 
     private void Start() {
         turnTracker = FindAnyObjectByType<TurnTracker>();
@@ -45,7 +41,8 @@ public class DragTiles : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDra
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        if (!tileSelection.PlacedTileAtPosition(tileSelection.HighlightedTilePosition))
+        if (!tileSelection.PlacedTileAtPosition(tileSelection.HighlightedTilePosition)
+        && tileSelection.BoardTile.HasTile((Vector3Int)tileSelection.HighlightedTilePosition))
         {
             Debug.Log("place tile");
             placeTiles.PlaceTile(tile,tileSelection.HighlightedTilePosition);

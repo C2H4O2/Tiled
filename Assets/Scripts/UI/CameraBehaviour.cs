@@ -6,10 +6,12 @@ using UnityEngine;
 public class CameraBehaviour : MonoBehaviour
 {
     private TurnTracker turnTracker;
+    [SerializeField] private CinemachineVirtualCamera vCamera;
+
     private void Awake() {
         turnTracker = FindAnyObjectByType<TurnTracker>();
     }
-    [SerializeField] private CinemachineVirtualCamera vCamera;
+    
     public void SwitchCameraTarget() 
     {
         Player player = turnTracker.QueryTurn();

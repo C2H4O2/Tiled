@@ -43,7 +43,7 @@ public class TileSelection : MonoBehaviour
 
     public bool PlacedTileAtPosition(Vector2Int cellPosition)
     {
-        Debug.Log(placedTiles.HasTile((Vector3Int)cellPosition));
+        
         return placedTiles.HasTile((Vector3Int)cellPosition);
     }
 }

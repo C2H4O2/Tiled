@@ -26,6 +26,16 @@ public class TurnTracker : MonoBehaviour
     {
         return Random.Range(1, sides+1); // include 1 exclude 7
     }
+    
+    public int RollNDice(int sides, int numberOfRolls)
+    {
+        int sum = 0;
+        for (int i = 0; i < numberOfRolls; i++)
+        {
+            sum += RollDice(sides);
+        }
+        return sum; // include 1 exclude 7
+    }
 
     private void Start() {
         InitializeTurnOrder();
