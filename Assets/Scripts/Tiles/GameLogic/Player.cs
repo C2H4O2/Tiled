@@ -16,6 +16,7 @@ public class Player : MonoBehaviour
     private TileSelection tileSelection;
     private NeighbourTileFinder neighbourTileFinder;
     private PlayerTilePositions playerTilePositions;
+    private EffectTilePositions effectTilePositions;
 
     public string NameTag { get => nameTag; }
     public Vector2Int PlayerPosition { get => playerPosition; }
@@ -25,6 +26,7 @@ public class Player : MonoBehaviour
         tileSelection = FindAnyObjectByType<TileSelection>();
         neighbourTileFinder = FindAnyObjectByType<NeighbourTileFinder>();
         playerTilePositions = FindAnyObjectByType<PlayerTilePositions>();
+        effectTilePositions = FindAnyObjectByType<EffectTilePositions>();
     }
     private void Start() {
         MovePlayer(startingPosition);
@@ -70,6 +72,9 @@ public class Player : MonoBehaviour
     private void MovePlayer(Vector2Int cellPosition) {
         transform.position = tileSelection.CellToWorld(cellPosition);
         playerPosition = cellPosition;
+        if (effectTilePositions.EffectTilePosition.TryGetValue(cellPosition, out EffectTile effectTile)) {
+            effectTile.OnLand();
+        }
     }
 
     public void UpdateAdjacentTiles() {
