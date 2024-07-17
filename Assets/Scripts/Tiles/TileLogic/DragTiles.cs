@@ -70,15 +70,13 @@ public class DragTiles : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDra
             deckUIController.DisplayDeck();
             turnTracker.MovesLeft-=1;
             turnTracker.QueryTurn().UpdateAdjacentTiles();
+            
         }
         
-        StartCoroutine(DelayThenUpdateDraggingTile(0.2f));
+        turnTracker.TriggerDragDelay();
        
     }
-    private IEnumerator DelayThenUpdateDraggingTile(float seconds) {
-        yield return new WaitForSeconds(seconds);
-        turnTracker.DraggingTile = false;
-    }
+    
 
     private bool IsOutsideLayoutGroup()
     {

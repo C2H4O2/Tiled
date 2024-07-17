@@ -63,7 +63,7 @@ public class Player : MonoBehaviour
             return false;
         if(playerTilePositions.PlayerPositions.Contains(tileSelection.HighlightedTilePosition))
             return false;
-        else return true;
+        return true;
     }
 
     private IEnumerator DelayForSeconds(float seconds) {

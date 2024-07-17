@@ -26,6 +26,13 @@ public class TurnTracker : MonoBehaviour
         OnTurnChange.Invoke();
     }
     
+    public void TriggerDragDelay() {
+        StartCoroutine(DelayThenUpdateDraggingTile(0.2f));
+    }
+    private IEnumerator DelayThenUpdateDraggingTile(float seconds) {
+        yield return new WaitForSeconds(seconds);
+        DraggingTile = false;
+    }
     public Player QueryTurn()
     {
         return currentPlayerTurn;
