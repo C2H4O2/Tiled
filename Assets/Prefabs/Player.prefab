@@ -123,6 +123,7 @@ GameObject:
   - component: {fileID: 6457397570093555318}
   - component: {fileID: 1156075859796820614}
   - component: {fileID: 4571577745537609227}
+  - component: {fileID: 2667930255317241542}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -213,5 +214,17 @@ MonoBehaviour:
   nameTag: 
   startingPosition: {x: 0, y: 0}
   playerPosition: {x: 0, y: 0}
-  movesLeft: 0
   adjacentTilesToPlayer: []
+--- !u!114 &2667930255317241542
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7840155761254869858}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 991261b1af63f8247942e8db35590328, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventory: []

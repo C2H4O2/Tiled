@@ -299,7 +299,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3526280911181837690}
-  - component: {fileID: 6265654893562354690}
   m_Layer: 0
   m_Name: Deck
   m_TagString: Untagged
@@ -322,26 +321,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 6734482463699204753}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6265654893562354690
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6010201066293559545}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 29d2f8b1a3d14fc459a59681768099d1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  baseTiles:
-  - {fileID: 4539180927304038756, guid: 4a7a220e45859914b99bc94553675de8, type: 3}
-  - {fileID: 4539180927304038756, guid: 907df7af2fbd1a44d8311bab5461c454, type: 3}
-  tiles:
-  - {fileID: 4539180927304038756, guid: b4396a45454f33f49824a1f00c8b41e4, type: 3}
-  - {fileID: 4539180927304038756, guid: da9434958e3e76c4990fa599097dbb8e, type: 3}
-  - {fileID: 4539180927304038756, guid: 1afce6987fbd98240a8f6309665c0a91, type: 3}
-  - {fileID: 4539180927304038756, guid: e5d7c4fb9ddc91b478d369336b9ffde3, type: 3}
 --- !u!1 &6646185632817529730
 GameObject:
   m_ObjectHideFlags: 0

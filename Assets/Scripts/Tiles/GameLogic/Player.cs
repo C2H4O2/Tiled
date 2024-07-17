@@ -17,9 +17,10 @@ public class Player : MonoBehaviour
     private NeighbourTileFinder neighbourTileFinder;
     private PlayerTilePositions playerTilePositions;
     private EffectTilePositions effectTilePositions;
-
+    private PlayerInventory playerInventory;
     public string NameTag { get => nameTag; }
     public Vector2Int PlayerPosition { get => playerPosition; }
+    public PlayerInventory PlayerInventory { get => playerInventory; set => playerInventory = value; }
 
     private void Awake() {
         turnTracker = FindAnyObjectByType<TurnTracker>();
@@ -27,6 +28,7 @@ public class Player : MonoBehaviour
         neighbourTileFinder = FindAnyObjectByType<NeighbourTileFinder>();
         playerTilePositions = FindAnyObjectByType<PlayerTilePositions>();
         effectTilePositions = FindAnyObjectByType<EffectTilePositions>();
+        playerInventory = GetComponent<PlayerInventory>();
     }
     private void Start() {
         MovePlayer(startingPosition);
@@ -61,8 +63,7 @@ public class Player : MonoBehaviour
             return false;
         if(playerTilePositions.PlayerPositions.Contains(tileSelection.HighlightedTilePosition))
             return false;
-        else return true;
-
+        return true;
     }
 
     private IEnumerator DelayForSeconds(float seconds) {
