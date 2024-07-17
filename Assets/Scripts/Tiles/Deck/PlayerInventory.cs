@@ -21,7 +21,9 @@ public class PlayerInventory : MonoBehaviour
     }
 
     public void RemoveTile(EffectTile tileToRemove) {
+        
         var tile = inventory.FirstOrDefault(t => t.name == tileToRemove.name);
+        Debug.Log(tileToRemove.name);
         if (tile != null) {
             inventory.Remove(tile);
         }

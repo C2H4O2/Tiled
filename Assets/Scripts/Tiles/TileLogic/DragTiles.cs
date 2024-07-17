@@ -15,6 +15,7 @@ public class DragTiles : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDra
     private Vector2 defaultPosition;
 
     private EffectTile effectTile;
+    private DeckUIController deckUIController;
 
     private Transform defaultParent;
     private Canvas canvas;
@@ -23,19 +24,21 @@ public class DragTiles : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDra
         turnTracker = FindAnyObjectByType<TurnTracker>();
         tileSelection = FindAnyObjectByType<TileSelection>();
         placeTiles = FindAnyObjectByType<PlaceTiles>();
-        canvas = GetComponentInParent<Canvas>();
+        deckUIController = FindAnyObjectByType<DeckUIController>();
+        canvas = FindAnyObjectByType<Canvas>();
         effectTile = GetComponent<EffectTile>();
+        
     }
     private void Start() {
         defaultPosition = transform.position;
         defaultParent = transform.parent;
+        
     }
 
     public void OnBeginDrag(PointerEventData eventData)
     {
         defaultPosition = transform.position;
         defaultParent = transform.parent;
-       
         transform.SetParent(canvas.transform);
     }
 
@@ -54,6 +57,7 @@ public class DragTiles : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDra
             placeTiles.PlaceTile(effectTile,tileSelection.HighlightedTilePosition);
             turnTracker.QueryTurn().PlayerInventory.RemoveTile(effectTile);
             turnTracker.QueryTurn().PlayerInventory.DrawTile();
+            deckUIController.DisplayDeck();
             turnTracker.MovesLeft-=1;
             turnTracker.QueryTurn().UpdateAdjacentTiles();
         }

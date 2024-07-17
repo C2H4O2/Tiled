@@ -6,11 +6,11 @@ public class DeckUIController : MonoBehaviour
 {
     private TurnTracker turnTracker;
     [SerializeField] private GameObject tileHolder;
-    
+
     private void Awake() {
         turnTracker = FindAnyObjectByType<TurnTracker>();
     }
-
+    
     public void DisplayDeck() {
         DestroyChildren(tileHolder);
         List<EffectTile> inventory = turnTracker.QueryTurn().PlayerInventory.Inventory;
