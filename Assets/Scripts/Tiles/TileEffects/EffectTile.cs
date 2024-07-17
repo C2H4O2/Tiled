@@ -10,7 +10,6 @@ public abstract class EffectTile : MonoBehaviour
     [SerializeField] private int id;
     public Tile TileToPlace { get => tileToPlace; }
     public int ID { get => id; set => id = value; }
-
     public abstract void OnLand();
     
 
