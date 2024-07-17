@@ -27,10 +27,8 @@ public class DragTiles : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDra
         effectTile = GetComponent<EffectTile>();
     }
     private void Start() {
-        
         defaultPosition = transform.position;
         defaultParent = transform.parent;
-        
     }
 
     public void OnBeginDrag(PointerEventData eventData)
@@ -54,6 +52,8 @@ public class DragTiles : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDra
         {
             Debug.Log("place tile");
             placeTiles.PlaceTile(effectTile,tileSelection.HighlightedTilePosition);
+            turnTracker.QueryTurn().PlayerInventory.RemoveTile(effectTile);
+            turnTracker.QueryTurn().PlayerInventory.DrawTile();
             turnTracker.MovesLeft-=1;
             turnTracker.QueryTurn().UpdateAdjacentTiles();
         }

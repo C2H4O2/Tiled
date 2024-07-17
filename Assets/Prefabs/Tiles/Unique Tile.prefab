@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 7569254638216791265}
   - component: {fileID: 1263503339042224211}
   - component: {fileID: 197892467037603420}
-  - component: {fileID: 3887295046199131769}
+  - component: {fileID: 2560315086544413738}
   m_Layer: 5
-  m_Name: Tile
+  m_Name: Unique Tile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -89,8 +89,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eaf56aac07550b34e8c929bb01fab435, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  effectTile: {fileID: 0}
---- !u!114 &3887295046199131769
+--- !u!114 &2560315086544413738
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -99,7 +98,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4539180927304038756}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a494c782bb0d094bab4e1c6884377fd, type: 3}
+  m_Script: {fileID: 11500000, guid: 297f02c7ca42b1949b1e21e0945489e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tileToPlace: {fileID: 0}
+  tileToPlace: {fileID: 11400000, guid: c6f3401e10677524cb2b53946702b316, type: 2}

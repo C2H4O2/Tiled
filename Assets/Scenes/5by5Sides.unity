@@ -447,10 +447,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 653784311}
     m_Modifications:
-    - target: {fileID: 3887295046199131769, guid: 4a7a220e45859914b99bc94553675de8, type: 3}
-      propertyPath: tileToPlace
-      value: 
-      objectReference: {fileID: 11400000, guid: 2ec6185e3b08a09458518a72815900fa, type: 2}
     - target: {fileID: 4055925568148909834, guid: 4a7a220e45859914b99bc94553675de8, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1453,10 +1449,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 653784311}
     m_Modifications:
-    - target: {fileID: 3887295046199131769, guid: 4a7a220e45859914b99bc94553675de8, type: 3}
-      propertyPath: tileToPlace
-      value: 
-      objectReference: {fileID: 11400000, guid: 2ec6185e3b08a09458518a72815900fa, type: 2}
     - target: {fileID: 4055925568148909834, guid: 4a7a220e45859914b99bc94553675de8, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1956,6 +1948,46 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 4055925568148909834, guid: 4a7a220e45859914b99bc94553675de8, type: 3}
   m_PrefabInstance: {fileID: 2615866349555005252}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1262501989 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6010201066293559545, guid: b22c4973443a812409f0872cd48678a0, type: 3}
+  m_PrefabInstance: {fileID: 5205535727596433561}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1262501991
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1262501989}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75437453c1228bc49b7cccd81ad0113f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  commonTiles:
+  - {fileID: 4539180927304038756, guid: 38f84313d85977c41bd8608bc27a88f7, type: 3}
+  rareTiles:
+  - {fileID: 4539180927304038756, guid: 4a7a220e45859914b99bc94553675de8, type: 3}
+  epicTiles:
+  - {fileID: 4539180927304038756, guid: 67b49a856338b9a4eaa71d53fc43141a, type: 3}
+  legendaryTiles:
+  - {fileID: 4539180927304038756, guid: 2d474b858bb27d84899425b559dc28b3, type: 3}
+  UniqueTiles:
+  - {fileID: 4539180927304038756, guid: 2a0d7670d2732c24d89c0b7e969b6826, type: 3}
+--- !u!114 &1262501992
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1262501989}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 385203994bef9d646b0509ffcd815aa3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tileHolder: {fileID: 653784310}
 --- !u!224 &1274536323 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4055925568148909834, guid: 4a7a220e45859914b99bc94553675de8, type: 3}
@@ -2244,10 +2276,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 653784311}
     m_Modifications:
-    - target: {fileID: 3887295046199131769, guid: 4a7a220e45859914b99bc94553675de8, type: 3}
-      propertyPath: tileToPlace
-      value: 
-      objectReference: {fileID: 11400000, guid: 2ec6185e3b08a09458518a72815900fa, type: 2}
     - target: {fileID: 4055925568148909834, guid: 4a7a220e45859914b99bc94553675de8, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -2471,10 +2499,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 653784311}
     m_Modifications:
-    - target: {fileID: 3887295046199131769, guid: 4a7a220e45859914b99bc94553675de8, type: 3}
-      propertyPath: tileToPlace
-      value: 
-      objectReference: {fileID: 11400000, guid: 2ec6185e3b08a09458518a72815900fa, type: 2}
     - target: {fileID: 4055925568148909834, guid: 4a7a220e45859914b99bc94553675de8, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -2667,6 +2691,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1819589531107631047, guid: b22c4973443a812409f0872cd48678a0, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1035101911}
+    - targetCorrespondingSourceObject: {fileID: 6010201066293559545, guid: b22c4973443a812409f0872cd48678a0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1262501991}
+    - targetCorrespondingSourceObject: {fileID: 6010201066293559545, guid: b22c4973443a812409f0872cd48678a0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1262501992}
   m_SourcePrefab: {fileID: 100100000, guid: b22c4973443a812409f0872cd48678a0, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

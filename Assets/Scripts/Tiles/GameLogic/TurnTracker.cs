@@ -17,6 +17,15 @@ public class TurnTracker : MonoBehaviour
     public int MovesLeft { get => movesLeft; set => movesLeft = value; }
     public bool DraggingTile { get => draggingTile; set => draggingTile = value; }
 
+    private void Start() {
+        InitializeTurnOrder();
+        RandomiseTurn();
+        
+        currentPlayerTurn = turnOrder[0]; // Set the initial player turn
+        MovesLeft = RollDice(6);
+        OnTurnChange.Invoke();
+    }
+    
     public Player QueryTurn()
     {
         return currentPlayerTurn;
@@ -37,14 +46,7 @@ public class TurnTracker : MonoBehaviour
         return sum; // include 1 exclude 7
     }
 
-    private void Start() {
-        InitializeTurnOrder();
-        RandomiseTurn();
-        
-        currentPlayerTurn = turnOrder[0]; // Set the initial player turn
-        MovesLeft = RollDice(6);
-        OnTurnChange.Invoke();
-    }
+    
     
     private void InitializeTurnOrder() 
     {
