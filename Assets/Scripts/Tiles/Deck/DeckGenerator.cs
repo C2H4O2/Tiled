@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class DeckGenerator : MonoBehaviour
@@ -9,7 +10,25 @@ public class DeckGenerator : MonoBehaviour
     [SerializeField] private GameObject[] rareTiles;
     [SerializeField] private GameObject[] epicTiles;
     [SerializeField] private GameObject[] legendaryTiles;
-    [SerializeField] private GameObject[] UniqueTiles;
+    [SerializeField] private GameObject[] uniqueTiles;
+
+    [SerializeField] private GameObject[] allTiles;
+    private void Start() {
+        // Combine all tile arrays into one
+        allTiles = commonTiles.Concat(rareTiles)
+                              .Concat(epicTiles)
+                              .Concat(legendaryTiles)
+                              .Concat(uniqueTiles)
+                              .ToArray();
+
+        // Assign unique IDs to each tile
+        for (int i = 0; i < allTiles.Length; i++) {
+            EffectTile effectTileComponent = allTiles[i].GetComponent<EffectTile>();
+            if (effectTileComponent != null) {
+                effectTileComponent.ID = i;
+            }
+        }
+    }
 
     public GameObject PickRandomTile() {
         float random = Random.Range(0f, 1f);

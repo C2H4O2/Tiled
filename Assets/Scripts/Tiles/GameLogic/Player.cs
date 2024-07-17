@@ -64,7 +64,6 @@ public class Player : MonoBehaviour
         if(playerTilePositions.PlayerPositions.Contains(tileSelection.HighlightedTilePosition))
             return false;
         else return true;
-
     }
 
     private IEnumerator DelayForSeconds(float seconds) {

@@ -10,7 +10,7 @@ public class DeckUIController : MonoBehaviour
     private void Awake() {
         turnTracker = FindAnyObjectByType<TurnTracker>();
     }
-    
+
     public void DisplayDeck() {
         DestroyChildren(tileHolder);
         List<EffectTile> inventory = turnTracker.QueryTurn().PlayerInventory.Inventory;
@@ -23,8 +23,8 @@ public class DeckUIController : MonoBehaviour
             tileInstance.transform.SetParent(tileHolder.transform);
             tileInstance.transform.localScale = Vector3.one;
             tileInstance.transform.localPosition = Vector3.zero;
+            tileInstance.name = tileInstance.name.Replace("(Clone)", "").Trim();
         }
-        
     }
 
     private void DestroyChildren(GameObject parent) {

@@ -50,6 +50,16 @@ public class DragTiles : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDra
 
     public void OnEndDrag(PointerEventData eventData)
     {
+        if (IsOutsideLayoutGroup())
+        {   // Return the tile back to its original position and parent
+            transform.position = defaultPosition;
+            transform.SetParent(defaultParent);
+        }
+        else
+        {   // If inside the layout group, reparent it to the default parent
+            
+            transform.SetParent(defaultParent);
+        }
         if (!tileSelection.PlacedTileAtPosition(tileSelection.HighlightedTilePosition)
         && tileSelection.BoardTile.HasTile((Vector3Int)tileSelection.HighlightedTilePosition))
         {
@@ -61,16 +71,7 @@ public class DragTiles : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDra
             turnTracker.MovesLeft-=1;
             turnTracker.QueryTurn().UpdateAdjacentTiles();
         }
-        if (IsOutsideLayoutGroup())
-        {   // Return the tile back to its original position and parent
-            transform.position = defaultPosition;
-            transform.SetParent(defaultParent);
-        }
-        else
-        {   // If inside the layout group, reparent it to the default parent
-            
-            transform.SetParent(defaultParent);
-        }
+        
         StartCoroutine(DelayThenUpdateDraggingTile(0.2f));
        
     }
