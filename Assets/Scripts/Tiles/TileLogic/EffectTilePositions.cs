@@ -27,7 +27,7 @@ public class EffectTilePositions : MonoBehaviour
         effectTilePosition[position] = effectTileInfo;
 
         // Debugging statement to confirm the tile was added
-        //Debug.Log($"EffectTile added at position {position} with IsFacingPositive: {isFacingPositive}");
+        Debug.Log($"EffectTile added at position {position} with IsFacingPositive: {isFacingPositive}");
     }
 
     public bool TryGetEffectTile(Vector2Int position, out EffectTileInfo effectTileInfo)
