@@ -16,13 +16,15 @@ public class TurnTracker : MonoBehaviour
     public UnityEvent OnTurnChange { get => onTurnChange; }
     public int MovesLeft { get => movesLeft; set => movesLeft = value; }
     public bool DraggingTile { get => draggingTile; set => draggingTile = value; }
+    public Player[] TeamOnePlayers { get => teamOnePlayers; }
+    public Player[] TeamTwoPlayers { get => teamTwoPlayers; }
 
     private void Start() {
         InitializeTurnOrder();
         RandomiseTurn();
         
         currentPlayerTurn = turnOrder[0]; // Set the initial player turn
-        MovesLeft = RollDice(6);
+        MovesLeft = RollNDice(6,2);
         OnTurnChange.Invoke();
     }
     

@@ -32,7 +32,7 @@ public class Player : MonoBehaviour
         playerInventory = GetComponent<PlayerInventory>();
     }
     private void Start() {
-        MovePlayer(startingPosition);
+        Respawn();
         UpdateAdjacentTiles();
     }
 
@@ -75,8 +75,11 @@ public class Player : MonoBehaviour
         transform.position = tileSelection.CellToWorld(cellPosition);
         playerPosition = cellPosition;
         playerTilePositions.UpdateAllPlayerTilePositions();
-        if (effectTilePositions.EffectTilePosition.TryGetValue(cellPosition, out EffectTile effectTile)) {
-            effectTile.OnLand(playerPosition);
+        
+        if (effectTilePositions.TryGetEffectTile(cellPosition, out var effectTileInfo)) {
+            effectTileInfo.EffectTile.OnLand(cellPosition);
+        } else {
+            Debug.LogWarning($"No effect tile to land on at {cellPosition}");
         }
         
     }

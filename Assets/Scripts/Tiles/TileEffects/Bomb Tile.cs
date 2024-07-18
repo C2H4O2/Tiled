@@ -23,7 +23,8 @@ public class BombTile : EffectTile
             tileSelection.PlacedTiles.SetTile((Vector3Int)adjacentTile, null);
             effectTilePositions.EffectTilePosition.Remove(adjacentTile);
         }
-        //tileSelection.PlacedTiles.SetTile((Vector3Int)tilePosition, null);
+        tileSelection.PlacedTiles.SetTile((Vector3Int)tilePosition, null);
+        effectTilePositions.EffectTilePosition.Remove(tilePosition);
         
     }
 }

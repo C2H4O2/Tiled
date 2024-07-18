@@ -8,8 +8,13 @@ public abstract class EffectTile : MonoBehaviour
 {
     [SerializeField] private Tile tileToPlace;
     [SerializeField] private int id;
+    [SerializeField] private bool isDirectional;
+    [SerializeField] private bool isIndestructable;
     public Tile TileToPlace { get => tileToPlace; }
     public int ID { get => id; set => id = value; }
+    public bool IsDirectional { get => isDirectional; }
+    public bool IsIndestructable { get => isIndestructable; }
+
     public abstract void OnLand(Vector2Int landedPosition);
     
 

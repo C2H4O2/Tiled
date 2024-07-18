@@ -802,7 +802,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.4745098, g: 0.44473657, b: 0.19215688, a: 0}
+  m_BackGroundColor: {r: 0.98039216, g: 0.735849, b: 0.17007832, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -2229,6 +2229,7 @@ MonoBehaviour:
   - {fileID: 4539180927304038756, guid: e6e3546f406f6f44e87fac8e12e8de2c, type: 3}
   rareTiles:
   - {fileID: 4539180927304038756, guid: 4a7a220e45859914b99bc94553675de8, type: 3}
+  - {fileID: 4539180927304038756, guid: a7ed1e6ff662c5e469e2e86a1e0ad05f, type: 3}
   epicTiles:
   - {fileID: 4539180927304038756, guid: 67b49a856338b9a4eaa71d53fc43141a, type: 3}
   legendaryTiles:
