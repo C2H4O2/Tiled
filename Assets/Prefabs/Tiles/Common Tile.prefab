@@ -67,7 +67,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 454542040, guid: b1c48c236c3041b4cae83017d200640d, type: 3}
+  m_Sprite: {fileID: -506867889, guid: 6dfd6b66e1707754ea6de85adb6175a8, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -101,4 +101,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfa049a7e0994434ca7dbf36e1cc8370, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tileToPlace: {fileID: 11400000, guid: 61945d390dfcbfc46a57dee170187a08, type: 2}
+  tileToPlace: {fileID: 11400000, guid: 000fa0cef67bf2a45a6ec19d83b626be, type: 2}
+  id: 0
