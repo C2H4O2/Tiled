@@ -11,6 +11,8 @@ public class DragTiles : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDra
     
     private TurnTracker turnTracker;
     private TileSelection tileSelection;
+    private NeighbourTileFinder neighbourTileFinder;
+    private EffectTilePositions effectTilePositions;
     private PlaceTiles placeTiles;
     private Vector2 defaultPosition;
 
@@ -23,7 +25,9 @@ public class DragTiles : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDra
     private void Awake() {
         turnTracker = FindAnyObjectByType<TurnTracker>();
         tileSelection = FindAnyObjectByType<TileSelection>();
+        neighbourTileFinder = FindAnyObjectByType<NeighbourTileFinder>();
         placeTiles = FindAnyObjectByType<PlaceTiles>();
+        effectTilePositions = FindAnyObjectByType<EffectTilePositions>();
         deckUIController = FindAnyObjectByType<DeckUIController>();
         canvas = FindAnyObjectByType<Canvas>();
         effectTile = GetComponent<EffectTile>();
@@ -61,8 +65,14 @@ public class DragTiles : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDra
             transform.SetParent(defaultParent);
         }
         if (!tileSelection.PlacedTileAtPosition(tileSelection.HighlightedTilePosition)
-        && tileSelection.BoardTile.HasTile((Vector3Int)tileSelection.HighlightedTilePosition))
+        && tileSelection.BoardTile.HasTile((Vector3Int)tileSelection.HighlightedTilePosition)
+        || neighbourTileFinder.FindAdjacentTiles(turnTracker.QueryTurn().PlayerPosition, tileSelection.BoardTile).Contains(tileSelection.HighlightedTilePosition))
         {
+            
+            if(effectTilePositions.TryGetEffectTile(tileSelection.HighlightedTilePosition, out var effectTileInfo)) {
+                if (effectTileInfo.EffectTile.IsIndestructable)
+                    return;   
+            }
             Debug.Log("place tile");
             placeTiles.PlaceTile(effectTile,tileSelection.HighlightedTilePosition);
             turnTracker.QueryTurn().PlayerInventory.RemoveTile(effectTile);
@@ -70,9 +80,9 @@ public class DragTiles : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDra
             deckUIController.DisplayDeck();
             turnTracker.MovesLeft-=1;
             turnTracker.QueryTurn().UpdateAdjacentTiles();
-            
         }
-        
+
+      
         turnTracker.TriggerDragDelay();
        
     }

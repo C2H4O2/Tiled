@@ -11,6 +11,7 @@ public class Player : MonoBehaviour
     [SerializeField] private Vector2Int startingPosition;
     [SerializeField] private Vector2Int playerPosition;
     [SerializeField] private Vector2Int[] adjacentTilesToPlayer;
+    private bool firstTurn = true;
     
     private TurnTracker turnTracker;
     private TileSelection tileSelection;
@@ -18,9 +19,12 @@ public class Player : MonoBehaviour
     private PlayerTilePositions playerTilePositions;
     private EffectTilePositions effectTilePositions;
     private PlayerInventory playerInventory;
+
     public string NameTag { get => nameTag; }
     public Vector2Int PlayerPosition { get => playerPosition; }
     public PlayerInventory PlayerInventory { get => playerInventory; set => playerInventory = value; }
+    public Vector2Int StartingPosition { get => startingPosition; }
+    public bool FirstTurn { get => firstTurn; set => firstTurn = value; }
 
     private void Awake() {
         turnTracker = FindAnyObjectByType<TurnTracker>();
@@ -31,7 +35,7 @@ public class Player : MonoBehaviour
         playerInventory = GetComponent<PlayerInventory>();
     }
     private void Start() {
-        MovePlayer(startingPosition);
+        Respawn();
         UpdateAdjacentTiles();
     }
 
@@ -70,15 +74,25 @@ public class Player : MonoBehaviour
         yield return new WaitForSeconds(seconds);
     }
 
-    private void MovePlayer(Vector2Int cellPosition) {
+    public void MovePlayer(Vector2Int cellPosition) {
         transform.position = tileSelection.CellToWorld(cellPosition);
         playerPosition = cellPosition;
-        if (effectTilePositions.EffectTilePosition.TryGetValue(cellPosition, out EffectTile effectTile)) {
-            effectTile.OnLand();
+        playerTilePositions.UpdateAllPlayerTilePositions();
+        
+        if (effectTilePositions.TryGetEffectTile(cellPosition, out var effectTileInfo)) {
+            effectTileInfo.EffectTile.OnLand(cellPosition);
+        } else {
+            Debug.LogWarning($"No effect tile to land on at {cellPosition}");
         }
+        
     }
 
     public void UpdateAdjacentTiles() {
         adjacentTilesToPlayer = neighbourTileFinder.FindAdjacentTiles(playerPosition, tileSelection.PlacedTiles);
+    }
+
+    public void Respawn() {
+        transform.position = tileSelection.CellToWorld(startingPosition);
+        playerPosition = startingPosition;
     }
 }

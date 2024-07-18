@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 7569254638216791265}
   - component: {fileID: 1263503339042224211}
   - component: {fileID: 197892467037603420}
-  - component: {fileID: -7262207009473811319}
+  - component: {fileID: -8542657964058263975}
   m_Layer: 5
-  m_Name: Legendary Tile
+  m_Name: Respawn Tile Red
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -67,7 +67,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -1446582044, guid: 6dfd6b66e1707754ea6de85adb6175a8, type: 3}
+  m_Sprite: {fileID: -1532476775, guid: b1c48c236c3041b4cae83017d200640d, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -89,7 +89,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eaf56aac07550b34e8c929bb01fab435, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &-7262207009473811319
+--- !u!114 &-8542657964058263975
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -98,8 +98,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 4539180927304038756}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b0ec0c737cd01934db5be420453e7ff3, type: 3}
+  m_Script: {fileID: 11500000, guid: 974bda0593c48a74ab586d7216bf0e89, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tileToPlace: {fileID: 11400000, guid: 684f0d9e7f45f71428af39f2a880c584, type: 2}
-  id: 3
+  tileToPlace: {fileID: 11400000, guid: 300eae920dfc87243a18b20aa6c33cf3, type: 2}
+  id: 0
