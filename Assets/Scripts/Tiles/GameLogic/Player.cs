@@ -21,6 +21,7 @@ public class Player : MonoBehaviour
     public string NameTag { get => nameTag; }
     public Vector2Int PlayerPosition { get => playerPosition; }
     public PlayerInventory PlayerInventory { get => playerInventory; set => playerInventory = value; }
+    public Vector2Int StartingPosition { get => startingPosition; }
 
     private void Awake() {
         turnTracker = FindAnyObjectByType<TurnTracker>();
@@ -70,15 +71,22 @@ public class Player : MonoBehaviour
         yield return new WaitForSeconds(seconds);
     }
 
-    private void MovePlayer(Vector2Int cellPosition) {
+    public void MovePlayer(Vector2Int cellPosition) {
         transform.position = tileSelection.CellToWorld(cellPosition);
         playerPosition = cellPosition;
+        playerTilePositions.UpdateAllPlayerTilePositions();
         if (effectTilePositions.EffectTilePosition.TryGetValue(cellPosition, out EffectTile effectTile)) {
-            effectTile.OnLand();
+            effectTile.OnLand(playerPosition);
         }
+        
     }
 
     public void UpdateAdjacentTiles() {
         adjacentTilesToPlayer = neighbourTileFinder.FindAdjacentTiles(playerPosition, tileSelection.PlacedTiles);
+    }
+
+    public void Respawn() {
+        transform.position = tileSelection.CellToWorld(startingPosition);
+        playerPosition = startingPosition;
     }
 }

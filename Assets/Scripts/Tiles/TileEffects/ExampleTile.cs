@@ -6,7 +6,7 @@ using UnityEngine.Tilemaps;
 public class ExampleTile : EffectTile
 {
     TurnTracker turnTracker;
-    public override void OnLand()
+    public override void OnLand(Vector2Int tilePosition)
     {
         Debug.Log("Landed");
     }

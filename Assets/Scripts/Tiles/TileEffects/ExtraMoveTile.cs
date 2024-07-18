@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class ExtraMoveTile : EffectTile
 {
-    [SerializeField] private TurnTracker turnTracker;
-    private void Awake() {
+    private TurnTracker turnTracker;
+    
+    public override void OnLand(Vector2Int tilePosition) {
         turnTracker = FindAnyObjectByType<TurnTracker>();
-    }
-    public override void OnLand() {
         turnTracker.MovesLeft += 1;
     }
+
 }
