@@ -6,13 +6,13 @@ public class SkipTile : EffectTile
 {
     private PlayerTilePositions playerTilePositions;
     private EffectTilePositions effectTilePositions;
-    private TurnTracker turnTracker;
+    private TileSelection tileSelection;
 
     public override void OnLand(Vector2Int landedPosition)
     {
         playerTilePositions = FindAnyObjectByType<PlayerTilePositions>();
         effectTilePositions = FindAnyObjectByType<EffectTilePositions>();
-        turnTracker = FindAnyObjectByType<TurnTracker>();
+        tileSelection = FindAnyObjectByType<TileSelection>();
 
         Player targetPlayer = playerTilePositions.GetPlayerAtTilePosition(landedPosition);
 
@@ -27,16 +27,22 @@ public class SkipTile : EffectTile
             Debug.Log(effectTileInfo.IsFacingPositive);
             if (effectTileInfo.IsFacingPositive)
             {
-                targetPlayer.MovePlayer(landedPosition + new Vector2Int(2, 0));
+                if(tileSelection.BoardTile.HasTile((Vector3Int)(landedPosition + new Vector2Int(2,0)))) {
+                    targetPlayer.Respawn();
+                }
+                else {
+                    targetPlayer.MovePlayer(landedPosition + new Vector2Int(2, 0));
+                }
             }
             else
             {
-                targetPlayer.MovePlayer(landedPosition + new Vector2Int(-2, 0));
+                if(tileSelection.BoardTile.HasTile((Vector3Int)(landedPosition + new Vector2Int(-2,0)))) {
+                    targetPlayer.Respawn();
+                }
+                else {
+                    targetPlayer.MovePlayer(landedPosition + new Vector2Int(-2, 0));
+                }
             }
-        }
-        else
-        {
-            targetPlayer.MovePlayer(landedPosition + new Vector2Int(-2, 0));
         }
     }
 }

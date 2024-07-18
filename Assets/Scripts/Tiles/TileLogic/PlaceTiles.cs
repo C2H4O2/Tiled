@@ -32,6 +32,12 @@ public class PlaceTiles : MonoBehaviour
         
         effectTilePositions.EffectTilePosition.Remove(tileToPlacePosition);
         effectTilePositions.AddEffectTile(tileToPlacePosition, deckGenerator.GetTileByEffectTile(effectTile).GetComponent<EffectTile>(), isFacingPositive);
+        for (int i = 0; i < players.Length; i++) {
+            if(tileToPlacePosition == players[i].PlayerPosition) {
+                players[i].MovePlayer(tileToPlacePosition);
+            }
+        }
+        
         foreach (Player player in players) {
             player.UpdateAdjacentTiles();
         }

@@ -11,6 +11,7 @@ public class Player : MonoBehaviour
     [SerializeField] private Vector2Int startingPosition;
     [SerializeField] private Vector2Int playerPosition;
     [SerializeField] private Vector2Int[] adjacentTilesToPlayer;
+    private bool firstTurn = true;
     
     private TurnTracker turnTracker;
     private TileSelection tileSelection;
@@ -18,10 +19,12 @@ public class Player : MonoBehaviour
     private PlayerTilePositions playerTilePositions;
     private EffectTilePositions effectTilePositions;
     private PlayerInventory playerInventory;
+
     public string NameTag { get => nameTag; }
     public Vector2Int PlayerPosition { get => playerPosition; }
     public PlayerInventory PlayerInventory { get => playerInventory; set => playerInventory = value; }
     public Vector2Int StartingPosition { get => startingPosition; }
+    public bool FirstTurn { get => firstTurn; set => firstTurn = value; }
 
     private void Awake() {
         turnTracker = FindAnyObjectByType<TurnTracker>();
