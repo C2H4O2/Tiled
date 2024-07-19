@@ -24,25 +24,23 @@ public class SkipTile : EffectTile
 
         if (effectTilePositions.TryGetEffectTile(landedPosition, out var effectTileInfo))
         {
-            Debug.Log(effectTileInfo.IsFacingPositive);
-            if (effectTileInfo.IsFacingPositive)
-            {
-                if(tileSelection.BoardTile.HasTile((Vector3Int)(landedPosition + new Vector2Int(2,0)))) {
-                    targetPlayer.Respawn();
-                }
-                else {
-                    targetPlayer.MovePlayer(landedPosition + new Vector2Int(2, 0));
+            int sign = 1;
+            if(!effectTileInfo.IsFacingPositive) {
+                sign = -1;
+            }
+            if(effectTilePositions.TryGetEffectTile(landedPosition + new Vector2Int(sign*2,0), out var effectTileInfoForLanding)) {
+                if(effectTileInfoForLanding.IsFacingPositive != effectTileInfo.IsFacingPositive) {
+                    Debug.Log("You skipped and unskipped?");
+                    return;
                 }
             }
-            else
-            {
-                if(tileSelection.BoardTile.HasTile((Vector3Int)(landedPosition + new Vector2Int(-2,0)))) {
-                    targetPlayer.Respawn();
-                }
-                else {
-                    targetPlayer.MovePlayer(landedPosition + new Vector2Int(-2, 0));
-                }
+            if(tileSelection.BoardTile.HasTile((Vector3Int)(landedPosition + new Vector2Int(sign*2,0)))) {
+                targetPlayer.MovePlayer(landedPosition + new Vector2Int(sign*2, 0));
             }
+            else {
+                targetPlayer.Respawn();
+            }
+            
         }
     }
 }
