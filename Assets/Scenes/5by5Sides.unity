@@ -2230,6 +2230,7 @@ MonoBehaviour:
   rareTiles:
   - {fileID: 4539180927304038756, guid: 4a7a220e45859914b99bc94553675de8, type: 3}
   - {fileID: 4539180927304038756, guid: a7ed1e6ff662c5e469e2e86a1e0ad05f, type: 3}
+  - {fileID: 4539180927304038756, guid: 0c83d7a425cb9624a83997faf8bcd7d0, type: 3}
   epicTiles:
   - {fileID: 4539180927304038756, guid: 67b49a856338b9a4eaa71d53fc43141a, type: 3}
   legendaryTiles:
