@@ -42,4 +42,19 @@ public class EffectTilePositions : MonoBehaviour
         effectTileInfo = null;
         return false;
     }
+
+    public bool TryGetAllEffectPositionsOfType(EffectTile effectTile, out List<Vector2Int> positions)
+    {
+        positions = new List<Vector2Int>();
+
+        foreach (var entry in effectTilePosition)
+        {
+            if (entry.Value.EffectTile == effectTile)
+            {
+                positions.Add(entry.Key);
+            }
+        }
+
+        return positions.Count > 0;
+    }
 }
