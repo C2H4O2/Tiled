@@ -64,8 +64,8 @@ public class DragTiles : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDra
             
             transform.SetParent(defaultParent);
         }
-        if (!tileSelection.PlacedTileAtPosition(tileSelection.HighlightedTilePosition)
-        && tileSelection.BoardTile.HasTile((Vector3Int)tileSelection.HighlightedTilePosition)
+        if ((!tileSelection.PlacedTileAtPosition(tileSelection.HighlightedTilePosition)
+        && tileSelection.BoardTile.HasTile((Vector3Int)tileSelection.HighlightedTilePosition))
         || neighbourTileFinder.FindAdjacentTiles(turnTracker.QueryTurn().PlayerPosition, tileSelection.BoardTile).Contains(tileSelection.HighlightedTilePosition))
         {
             

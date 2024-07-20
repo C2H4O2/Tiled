@@ -24,12 +24,12 @@ public class JumpTile : EffectTile
 
         if (effectTilePositions.TryGetEffectTile(landedPosition, out var effectTileInfo))
         {
-            int sign = 1;
-            if(!effectTileInfo.IsFacingPositive) {
-                sign = -1;
-            }
-            if(effectTilePositions.TryGetEffectTile(landedPosition + new Vector2Int(sign*2,0), out var effectTileInfoForLanding)) {
-                if(effectTileInfoForLanding.IsFacingPositive != effectTileInfo.IsFacingPositive) {
+            int sign = effectTileInfo.IsFacingPositive ? 1 : -1;
+            Vector2Int targetPosition = landedPosition + new Vector2Int(sign * 2, 0);
+            if (effectTilePositions.TryGetEffectTile(targetPosition, out var effectTileInfoForLanding))
+            {
+                if (effectTileInfoForLanding.EffectTile == effectTileInfo.EffectTile && (effectTileInfo.IsFacingPositive != effectTileInfoForLanding.IsFacingPositive))
+                {
                     Debug.Log("You skipped and unskipped?");
                     return;
                 }
