@@ -102,6 +102,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tileToPlace: {fileID: 11400000, guid: 684f0d9e7f45f71428af39f2a880c584, type: 2}
-  id: 9
+  id: 10
   isDirectional: 0
-  isIndestructable: 0
+  isIndestructable: 1
+  description: 

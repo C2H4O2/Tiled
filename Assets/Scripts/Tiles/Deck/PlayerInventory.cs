@@ -14,7 +14,7 @@ public class PlayerInventory : MonoBehaviour
         deckGenerator = FindAnyObjectByType<DeckGenerator>();
     }
 
-    private void Start() {
+    private void OnEnable() {
         for (int i = 0; i < 6; i++) {
             EffectTile tileGenerated = deckGenerator.PickRandomTile().GetComponent<EffectTile>();
             inventory.Add(tileGenerated);
