@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 7569254638216791265}
   - component: {fileID: 1263503339042224211}
   - component: {fileID: 197892467037603420}
-  - component: {fileID: 2454421002950964885}
+  - component: {fileID: 5825956236639439310}
   m_Layer: 5
-  m_Name: Common Tile
+  m_Name: Party Popper
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -67,7 +67,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -506867889, guid: 6dfd6b66e1707754ea6de85adb6175a8, type: 3}
+  m_Sprite: {fileID: -2038746004, guid: 6dfd6b66e1707754ea6de85adb6175a8, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -89,7 +89,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eaf56aac07550b34e8c929bb01fab435, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &2454421002950964885
+--- !u!114 &5825956236639439310
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -98,11 +98,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 4539180927304038756}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bfa049a7e0994434ca7dbf36e1cc8370, type: 3}
+  m_Script: {fileID: 11500000, guid: 6b9bc477e4074404cb9e8d81d30279da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tileToPlace: {fileID: 11400000, guid: 000fa0cef67bf2a45a6ec19d83b626be, type: 2}
+  tileToPlace: {fileID: 11400000, guid: b2e5d5c5d76ba6146824a781bd5f3020, type: 2}
   id: 0
   isDirectional: 0
   isIndestructable: 0
-  description: Walk on me!
+  description: Scramble Placed Tiles

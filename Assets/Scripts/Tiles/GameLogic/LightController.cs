@@ -10,25 +10,31 @@ public class LightController : MonoBehaviour
     [SerializeField] private GameObject lightBulbTile;
     private TurnTracker turnTracker;
 
-    private void Awake() {
+    private void Awake()
+    {
         turnTracker = FindAnyObjectByType<TurnTracker>();
     }
 
-    public void ToggleGlobalLight() {
+    public void ToggleGlobalLight()
+    {
         globalLight.enabled = !globalLight.enabled;
-        if(!GlobalLightEnabled()) {
-            lightBulbTile.GetComponent<LightBulbTile>().TileToPlace = lightBulbTile.GetComponent<LightBulbTile>().LightOffTile;
-        }
-        else {
-            lightBulbTile.GetComponent<LightBulbTile>().TileToPlace = lightBulbTile.GetComponent<LightBulbTile>().LightOnTile;
+        
+        LightBulbTile lightBulbComponent = lightBulbTile.GetComponent<LightBulbTile>();
+        
+        if (lightBulbComponent != null)
+        {
+            lightBulbComponent.TileToPlace = globalLight.enabled ? lightBulbComponent.LightOnTile : lightBulbComponent.LightOffTile;
         }
     }
-    public bool GlobalLightEnabled() {
+
+    public bool GlobalLightEnabled()
+    {
         return globalLight.enabled;
     }
-    public void SwitchPlayerLightTarget() {
+
+    public void SwitchPlayerLightTarget()
+    {
         playerLight.transform.parent = turnTracker.QueryTurn().transform;
         playerLight.transform.localPosition = Vector3.zero;
     }
-    
 }
