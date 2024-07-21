@@ -94,5 +94,13 @@ public class Player : MonoBehaviour
     public void Respawn() {
         transform.position = tileSelection.CellToWorld(startingPosition);
         playerPosition = startingPosition;
+        if(turnTracker.QueryTurn() == this){
+            turnTracker.CycleThroughTurn();
+            Debug.Log("You died");
+        }
+        else {
+            Debug.Log("You killed" + nameTag);
+        }
+        
     }
 }

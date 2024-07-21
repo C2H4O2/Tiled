@@ -96,4 +96,5 @@ public class TurnTracker : MonoBehaviour
         
         OnTurnChange.Invoke();
     }
+    
 }

@@ -67,7 +67,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -722959997, guid: 6dfd6b66e1707754ea6de85adb6175a8, type: 3}
+  m_Sprite: {fileID: -1712247622, guid: 6dfd6b66e1707754ea6de85adb6175a8, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -101,5 +101,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0fd409f5ea05d1e47b425e46a0abb39f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tileToPlace: {fileID: 11400000, guid: 255df833f9f0c6e4e80ddaa2163bd324, type: 2}
-  id: 0
+  tileToPlace: {fileID: 11400000, guid: 02e0ba545b964174aa0273c6addd4ac0, type: 2}
+  id: 1
+  isDirectional: 0
+  isIndestructable: 0
+  description: Explodes everything around tile

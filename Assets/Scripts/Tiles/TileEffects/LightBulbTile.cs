@@ -20,6 +20,7 @@ public class LightBulbTile : EffectTile
         lightController = FindAnyObjectByType<LightController>();
         effectTilePositions = FindAnyObjectByType<EffectTilePositions>();
         lightController.ToggleGlobalLight();
+        
         if(effectTilePositions.TryGetAllEffectPositionsOfType(GetComponent<LightBulbTile>(),out var lightBulbPositions)) {
             foreach (var lightBulbPosition in lightBulbPositions)
             {
