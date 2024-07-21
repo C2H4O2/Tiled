@@ -10,7 +10,6 @@ public abstract class EffectTile : MonoBehaviour
     [SerializeField] private int id;
     [SerializeField] private bool isDirectional;
     [SerializeField] private bool isIndestructable;
-    [SerializeField][TextArea] private string description;
 
     public int ID { get => id; set => id = value; }
     public bool IsDirectional { get => isDirectional; }

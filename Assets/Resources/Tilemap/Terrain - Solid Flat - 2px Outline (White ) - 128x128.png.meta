@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 6dfd6b66e1707754ea6de85adb6175a8
+guid: b1c48c236c3041b4cae83017d200640d
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -97,7 +97,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Tiles_0
+      name: Terrain - Solid Flat - 2px Outline (White ) - 128x128_0
       rect:
         serializedVersion: 2
         x: 0
@@ -111,14 +111,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a7ef62687babab84bac2e788da255d8e
-      internalID: -506867889
+      spriteID: c0acda50b8da8544193459cda2aa98d6
+      internalID: 454542040
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tiles_1
+      name: Terrain - Solid Flat - 2px Outline (White ) - 128x128_1
       rect:
         serializedVersion: 2
         x: 128
@@ -132,35 +132,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7517af577ac5a664aae7ba6f3140e56c
-      internalID: -1503743763
+      spriteID: 85b23fc57851e044c84a795c569242bc
+      internalID: -1427309999
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tiles_2
-      rect:
-        serializedVersion: 2
-        x: 256
-        y: 384
-        width: 128
-        height: 128
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4f50e4cb7ec9bae4797bbf456829db72
-      internalID: -1501438090
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Tiles_3
+      name: Terrain - Solid Flat - 2px Outline (White ) - 128x128_2
       rect:
         serializedVersion: 2
         x: 0
@@ -174,14 +153,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f343b52630564d9438e10ae7a06ed282
-      internalID: -594858403
+      spriteID: 2cd3b78986ae3ff4782f1c46b8b2104f
+      internalID: 1523858198
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tiles_4
+      name: Terrain - Solid Flat - 2px Outline (White ) - 128x128_3
       rect:
         serializedVersion: 2
         x: 128
@@ -195,14 +174,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 26184e3e61e2109449490de1ca80387a
-      internalID: -1446582044
+      spriteID: ee25912b94e0f4f4297acbbe53a750b5
+      internalID: 1244989378
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tiles_5
+      name: Terrain - Solid Flat - 2px Outline (White ) - 128x128_4
       rect:
         serializedVersion: 2
         x: 0
@@ -216,14 +195,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 48cd8b13b9ac9d2478b5120110c2a097
-      internalID: 1471101973
+      spriteID: 8f7d86a4c98a64048bd506fcf529595d
+      internalID: -1427277694
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tiles_6
+      name: Terrain - Solid Flat - 2px Outline (White ) - 128x128_5
       rect:
         serializedVersion: 2
         x: 128
@@ -237,18 +216,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ffd1c4347000bb24cb2a31a8bf88fd39
-      internalID: -722959997
+      spriteID: 0d5090bca7c29c047bb4645ff59c9d9a
+      internalID: -799052200
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tiles_7
+      name: Terrain - Solid Flat - 2px Outline (White ) - 128x128_6
       rect:
         serializedVersion: 2
-        x: 256
-        y: 128
+        x: 0
+        y: 0
         width: 128
         height: 128
       alignment: 0
@@ -258,18 +237,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3073607095d03c440ace0fa1f20e7682
-      internalID: 1451577249
+      spriteID: e27f1ce89a0304c4e96ad16fe5c69227
+      internalID: -1532476775
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tiles_8
+      name: Terrain - Solid Flat - 2px Outline (White ) - 128x128_7
       rect:
         serializedVersion: 2
-        x: 384
-        y: 128
+        x: 128
+        y: 0
         width: 128
         height: 128
       alignment: 0
@@ -279,50 +258,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2be5f680e7ece7d47966d172de3eaeb2
-      internalID: -1712247622
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Tiles_9
-      rect:
-        serializedVersion: 2
-        x: 512
-        y: 128
-        width: 128
-        height: 128
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 26cb753f46e78f3478a40c89425a04ca
-      internalID: 1242003753
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Tiles_10
-      rect:
-        serializedVersion: 2
-        x: 640
-        y: 128
-        width: 128
-        height: 128
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1c98e6e4c52b7eb438cba2169bce203a
-      internalID: -1945477889
+      spriteID: 27df98e1f4084714db4445c7ee92d8b9
+      internalID: 49472688
       vertices: []
       indices: 
       edges: []
@@ -338,19 +275,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Tiles_0: -506867889
-      Tiles_1: -1503743763
-      Tiles_10: -1945477889
-      Tiles_11: 1524854271
-      Tiles_12: -1558954414
-      Tiles_2: -1501438090
-      Tiles_3: -594858403
-      Tiles_4: -1446582044
-      Tiles_5: 1471101973
-      Tiles_6: -722959997
-      Tiles_7: 1451577249
-      Tiles_8: -1712247622
-      Tiles_9: 1242003753
+      Terrain - Solid Flat - 2px Outline (White ) - 128x128_0: 454542040
+      Terrain - Solid Flat - 2px Outline (White ) - 128x128_1: -1427309999
+      Terrain - Solid Flat - 2px Outline (White ) - 128x128_2: 1523858198
+      Terrain - Solid Flat - 2px Outline (White ) - 128x128_3: 1244989378
+      Terrain - Solid Flat - 2px Outline (White ) - 128x128_4: -1427277694
+      Terrain - Solid Flat - 2px Outline (White ) - 128x128_5: -799052200
+      Terrain - Solid Flat - 2px Outline (White ) - 128x128_6: -1532476775
+      Terrain - Solid Flat - 2px Outline (White ) - 128x128_7: 49472688
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -10,9 +10,6 @@ public class DeckUIController : MonoBehaviour
     private void Awake() {
         turnTracker = FindAnyObjectByType<TurnTracker>();
     }
-    private void Start() {
-        DisplayDeck();
-    }
 
     public void DisplayDeck() {
         DestroyChildren(tileHolder);

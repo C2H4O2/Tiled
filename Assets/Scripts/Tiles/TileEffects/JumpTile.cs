@@ -7,7 +7,7 @@ public class JumpTile : EffectTile
     private PlayerTilePositions playerTilePositions;
     private EffectTilePositions effectTilePositions;
     private TileSelection tileSelection;
-    [SerializeField] private int moveDistance;
+
     public override void OnLand(Vector2Int landedPosition)
     {
         playerTilePositions = FindAnyObjectByType<PlayerTilePositions>();
@@ -25,7 +25,7 @@ public class JumpTile : EffectTile
         if (effectTilePositions.TryGetEffectTile(landedPosition, out var effectTileInfo))
         {
             int sign = effectTileInfo.IsFacingPositive ? 1 : -1;
-            Vector2Int targetPosition = landedPosition + new Vector2Int(sign * moveDistance , 0);
+            Vector2Int targetPosition = landedPosition + new Vector2Int(sign * 2, 0);
             if (effectTilePositions.TryGetEffectTile(targetPosition, out var effectTileInfoForLanding))
             {
                 if (effectTileInfoForLanding.EffectTile == effectTileInfo.EffectTile && (effectTileInfo.IsFacingPositive != effectTileInfoForLanding.IsFacingPositive))
@@ -34,16 +34,12 @@ public class JumpTile : EffectTile
                     return;
                 }
             }
-            if(tileSelection.PlacedTiles.HasTile((Vector3Int)(landedPosition + new Vector2Int(sign * moveDistance , 0)))) {
-                targetPlayer.MovePlayer(landedPosition + new Vector2Int(sign * moveDistance, 0));
-                if(playerTilePositions.GetPlayerAtTilePosition(landedPosition) != null) {
-                    playerTilePositions.GetPlayerAtTilePosition(landedPosition).Respawn();
-                }
+            if(tileSelection.BoardTile.HasTile((Vector3Int)(landedPosition + new Vector2Int(sign*2,0)))) {
+                targetPlayer.MovePlayer(landedPosition + new Vector2Int(sign*2, 0));
             }
             else {
                 targetPlayer.Respawn();
             }
-            
             
         }
     }

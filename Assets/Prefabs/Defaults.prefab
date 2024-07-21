@@ -59,7 +59,6 @@ GameObject:
   - component: {fileID: 1124113474683658339}
   - component: {fileID: 8308984472825180121}
   - component: {fileID: 2925595820915133550}
-  - component: {fileID: 3177996361006608413}
   m_Layer: 0
   m_Name: Tiles
   m_TagString: Untagged
@@ -195,7 +194,6 @@ Transform:
   - {fileID: 669012953211918634}
   - {fileID: 3526280911181837690}
   - {fileID: 6999964460429153916}
-  - {fileID: 3718043625197140162}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4040892094996570973
@@ -256,6 +254,18 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: CameraBehaviour, Assembly-CSharp
+        m_MethodName: SwitchCameraTarget
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: CurrentPlayerTurnDisplayer, Assembly-CSharp
         m_MethodName: ChangeCurrentPlayerText
         m_Mode: 1
@@ -279,30 +289,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 8857594775134376027}
-        m_TargetAssemblyTypeName: LightController, Assembly-CSharp
-        m_MethodName: SwitchPlayerLightTarget
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 370135945899064463}
-        m_TargetAssemblyTypeName: DeckUIController, Assembly-CSharp
-        m_MethodName: DisplayDeck
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
   draggingTile: 0
 --- !u!1 &6010201066293559545
 GameObject:
@@ -313,8 +299,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3526280911181837690}
-  - component: {fileID: 7246596575568772492}
-  - component: {fileID: 370135945899064463}
   m_Layer: 0
   m_Name: Deck
   m_TagString: Untagged
@@ -337,46 +321,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 6734482463699204753}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7246596575568772492
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6010201066293559545}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 75437453c1228bc49b7cccd81ad0113f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  commonTiles:
-  - {fileID: 4539180927304038756, guid: 38f84313d85977c41bd8608bc27a88f7, type: 3}
-  rareTiles:
-  - {fileID: 4539180927304038756, guid: 0c83d7a425cb9624a83997faf8bcd7d0, type: 3}
-  - {fileID: 4539180927304038756, guid: cc882bbbe5b0c6c4289f4637aff36bf4, type: 3}
-  - {fileID: 4539180927304038756, guid: e6e3546f406f6f44e87fac8e12e8de2c, type: 3}
-  epicTiles:
-  - {fileID: 4539180927304038756, guid: a7ed1e6ff662c5e469e2e86a1e0ad05f, type: 3}
-  - {fileID: 4539180927304038756, guid: d935a165da1318c478f19a801b53117e, type: 3}
-  legendaryTiles:
-  - {fileID: 4539180927304038756, guid: d44cd5c5fb1eb0a4ea58462dd9156a77, type: 3}
-  uniqueTiles:
-  - {fileID: 4539180927304038756, guid: 9317878cb548f48478557813b36771cf, type: 3}
-  - {fileID: 4539180927304038756, guid: c510bde871b47634f866c3411a6063a4, type: 3}
-  allTiles: []
---- !u!114 &370135945899064463
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6010201066293559545}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 385203994bef9d646b0509ffcd815aa3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tileHolder: {fileID: 0}
 --- !u!1 &6646185632817529730
 GameObject:
   m_ObjectHideFlags: 0
@@ -424,53 +368,6 @@ MonoBehaviour:
   fixedPoint: {x: 0, y: 0, z: 0}
   virtualCamera: {fileID: 0}
   lerpSpeed: 5
---- !u!1 &7583500571157228513
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3718043625197140162}
-  - component: {fileID: 8857594775134376027}
-  m_Layer: 0
-  m_Name: Light Controller
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &3718043625197140162
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7583500571157228513}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 6734482463699204753}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8857594775134376027
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7583500571157228513}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0358f389c3203a34986d95281fb9a7b3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  globalLight: {fileID: 0}
-  playerLight: {fileID: 0}
-  lightBulbTile: {fileID: 4539180927304038756, guid: d935a165da1318c478f19a801b53117e, type: 3}
 --- !u!1001 &5390292808919077654
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -542,9 +439,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6020839678125952209, guid: ef9f339ab7d875e4f8e4013c7e3802a2, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2925595820915133550}
-    - targetCorrespondingSourceObject: {fileID: 6020839678125952209, guid: ef9f339ab7d875e4f8e4013c7e3802a2, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 3177996361006608413}
   m_SourcePrefab: {fileID: 100100000, guid: ef9f339ab7d875e4f8e4013c7e3802a2, type: 3}
 --- !u!212 &2174977217823368961
 SpriteRenderer:
@@ -587,7 +481,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -1501438090, guid: 6dfd6b66e1707754ea6de85adb6175a8, type: 3}
+  m_Sprite: {fileID: 1523858198, guid: b1c48c236c3041b4cae83017d200640d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -653,16 +547,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   players: []
   playerPositions: []
-  startingPositions: []
---- !u!114 &3177996361006608413
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1819589531107631047}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8e0f075ea6f31e546af736128b6719a2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

@@ -57,29 +57,4 @@ public class EffectTilePositions : MonoBehaviour
 
         return positions.Count > 0;
     }
-
-    public void ScrambleEffectTiles()
-    {
-        List<EffectTileInfo> tempList = new List<EffectTileInfo>();
-        foreach (EffectTileInfo effectTileInfo in effectTilePosition.Values)
-        {
-            tempList.Add(effectTileInfo);
-        }
-
-        // Shuffle the list using Fisher-Yates algorithm
-        for (int i = 0; i < tempList.Count; i++)
-        {
-            int rng = Random.Range(0, tempList.Count);
-            EffectTileInfo temp = tempList[i];
-            tempList[i] = tempList[rng];
-            tempList[rng] = temp;
-        }
-
-        // Update the dictionary with new scrambled values
-        List<Vector2Int> keys = new List<Vector2Int>(effectTilePosition.Keys);
-        for (int i = 0; i < keys.Count; i++)
-        {
-            effectTilePosition[keys[i]] = tempList[i];
-        }
-    }
 }

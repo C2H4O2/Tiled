@@ -67,7 +67,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -1945477889, guid: 6dfd6b66e1707754ea6de85adb6175a8, type: 3}
+  m_Sprite: {fileID: -1712247622, guid: 6dfd6b66e1707754ea6de85adb6175a8, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -101,8 +101,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d3b469650ddee34da892ddab35219bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tileToPlace: {fileID: 11400000, guid: 0f4f4e38096aa774b95640c3842b1547, type: 2}
-  id: 2
+  tileToPlace: {fileID: 11400000, guid: 02e0ba545b964174aa0273c6addd4ac0, type: 2}
+  id: 0
   isDirectional: 0
   isIndestructable: 0
-  description: End the current player's turn

@@ -103,6 +103,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileToPlace: {fileID: 11400000, guid: 000fa0cef67bf2a45a6ec19d83b626be, type: 2}
   id: 0
-  isDirectional: 0
-  isIndestructable: 0
-  description: Walk on me!

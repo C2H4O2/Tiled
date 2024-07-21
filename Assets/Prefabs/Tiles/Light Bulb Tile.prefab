@@ -67,7 +67,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 1524854271, guid: 6dfd6b66e1707754ea6de85adb6175a8, type: 3}
+  m_Sprite: {fileID: 1242003753, guid: 6dfd6b66e1707754ea6de85adb6175a8, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -101,10 +101,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73523723c554ac7468130ed701582966, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tileToPlace: {fileID: 11400000, guid: a6286bac60a7f444f8abb2b5c0e4b72d, type: 2}
-  id: 4
+  tileToPlace: {fileID: 11400000, guid: 41e8a7d71aedb9c4ba4ac19e4c63afca, type: 2}
+  id: 5
   isDirectional: 0
-  isIndestructable: 0
-  description: Turn on or off the lights
-  lightOnTile: {fileID: 11400000, guid: a6286bac60a7f444f8abb2b5c0e4b72d, type: 2}
-  lightOffTile: {fileID: 11400000, guid: 7ea6c7e4b0f013b489dde25b29eeebf1, type: 2}
+  isIndestructable: 1
+  lightOnTile: {fileID: 11400000, guid: 41e8a7d71aedb9c4ba4ac19e4c63afca, type: 2}
+  lightOffTile: {fileID: 11400000, guid: 0f4f4e38096aa774b95640c3842b1547, type: 2}
