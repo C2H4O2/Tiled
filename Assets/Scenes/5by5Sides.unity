@@ -623,7 +623,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -12.400024, y: -75.20001}
+  m_AnchoredPosition: {x: -12.4001465, y: -75.19995}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &515432866
@@ -1133,7 +1133,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -34.8}
+  m_AnchoredPosition: {x: 0, y: -34.80005}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &620841028
@@ -1401,8 +1401,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -1200, y: -1005.47}
+  m_AnchoredPosition: {x: 0, y: 35.3}
+  m_SizeDelta: {x: -1200, y: -985.25995}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &653784312
 MonoBehaviour:
@@ -5995,13 +5995,29 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7246596575568772492, guid: b22c4973443a812409f0872cd48678a0, type: 3}
-      propertyPath: commonTiles.Array.size
-      value: 2
+      propertyPath: rareTiles.Array.size
+      value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 7246596575568772492, guid: b22c4973443a812409f0872cd48678a0, type: 3}
+      propertyPath: commonTiles.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7246596575568772492, guid: b22c4973443a812409f0872cd48678a0, type: 3}
+      propertyPath: rareTiles.Array.data[3]
+      value: 
+      objectReference: {fileID: 4539180927304038756, guid: e6e3546f406f6f44e87fac8e12e8de2c, type: 3}
     - target: {fileID: 7246596575568772492, guid: b22c4973443a812409f0872cd48678a0, type: 3}
       propertyPath: commonTiles.Array.data[1]
       value: 
-      objectReference: {fileID: 4539180927304038756, guid: 2474a5067c160ab49993e052b3dc49dd, type: 3}
+      objectReference: {fileID: 4539180927304038756, guid: cec9207aa9f6ce748b7c02e02e51b76c, type: 3}
+    - target: {fileID: 7246596575568772492, guid: b22c4973443a812409f0872cd48678a0, type: 3}
+      propertyPath: commonTiles.Array.data[2]
+      value: 
+      objectReference: {fileID: 4539180927304038756, guid: cec9207aa9f6ce748b7c02e02e51b76c, type: 3}
+    - target: {fileID: 7246596575568772492, guid: b22c4973443a812409f0872cd48678a0, type: 3}
+      propertyPath: commonTiles.Array.data[3]
+      value: 
+      objectReference: {fileID: 4539180927304038756, guid: cec9207aa9f6ce748b7c02e02e51b76c, type: 3}
     - target: {fileID: 7246596575568772492, guid: b22c4973443a812409f0872cd48678a0, type: 3}
       propertyPath: legendaryTiles.Array.size
       value: 2
