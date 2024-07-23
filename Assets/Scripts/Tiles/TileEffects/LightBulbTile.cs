@@ -14,7 +14,6 @@ public class LightBulbTile : EffectTile
     public Tile LightOnTile { get => lightOnTile; }
     public Tile LightOffTile { get => lightOffTile; }
 
-    private Tile tileToPlace;
 
     public override void OnLand(Vector2Int landedPosition)
     {
@@ -24,13 +23,13 @@ public class LightBulbTile : EffectTile
         
         lightController.ToggleGlobalLight();
         
-        tileToPlace = lightController.GlobalLightEnabled() ? LightOnTile : LightOffTile;
+        TileToPlace = lightController.GlobalLightEnabled() ? LightOnTile : LightOffTile;
         
         if (effectTilePositions.TryGetAllEffectPositionsOfType(GetComponent<LightBulbTile>(), out var lightBulbPositions))
         {
             foreach (var lightBulbPosition in lightBulbPositions)
             {
-                tileSelection.PlacedTiles.SetTile((Vector3Int)lightBulbPosition, tileToPlace);
+                tileSelection.PlacedTiles.SetTile((Vector3Int)lightBulbPosition, TileToPlace);
             }
         }
     }
