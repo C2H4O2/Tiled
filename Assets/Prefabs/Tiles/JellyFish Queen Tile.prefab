@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 197892467037603420}
   - component: {fileID: 1153384926301100340}
   m_Layer: 5
-  m_Name: JellyFish Tile
+  m_Name: JellyFish Queen Tile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -67,7 +67,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 1387924844, guid: 6dfd6b66e1707754ea6de85adb6175a8, type: 3}
+  m_Sprite: {fileID: -96295885, guid: 6dfd6b66e1707754ea6de85adb6175a8, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -101,8 +101,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 954dd4da51775ef4085d0c2843e5deea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tileToPlace: {fileID: 11400000, guid: dfeb5883707392a4bb594cc23f67a7ea, type: 2}
-  id: 0
+  tileToPlace: {fileID: 11400000, guid: f5b8cccb43dc4784c9873feac8f47150, type: 2}
+  id: 9
   isDirectional: 0
   isIndestructable: 0
+  isIrreplaceable: 0
   description: Jellyfish take over adjacent placed tiles when stepped on
+  jellyFishClone: {fileID: 6423086139711857395, guid: 27dc826e55c5d9b4aaf5b1144f54139f, type: 3}

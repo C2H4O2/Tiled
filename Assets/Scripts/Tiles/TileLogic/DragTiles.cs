@@ -61,7 +61,6 @@ public class DragTiles : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDra
         }
         else
         {   // If inside the layout group, reparent it to the default parent
-            
             transform.SetParent(defaultParent);
         }
         if ((!tileSelection.PlacedTileAtPosition(tileSelection.HighlightedTilePosition)
@@ -70,10 +69,12 @@ public class DragTiles : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDra
         {
             
             if(effectTilePositions.TryGetEffectTile(tileSelection.HighlightedTilePosition, out var effectTileInfo)) {
-                if (effectTileInfo.EffectTile.IsIndestructable)
+                effectTileInfo.EffectTile.OnRemoval();
+                if (effectTileInfo.EffectTile.IsIrreplaceable)
                     return;   
             }
             Debug.Log("place tile");
+            
             placeTiles.PlaceTile(effectTile,tileSelection.HighlightedTilePosition);
             turnTracker.QueryTurn().PlayerInventory.RemoveTile(effectTile);
             turnTracker.QueryTurn().PlayerInventory.DrawTile();

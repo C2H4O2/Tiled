@@ -2,10 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class JellyFishTile : EffectTile
+public class JellyFishCloneTile : EffectTile
 {
     private NeighbourTileFinder neighbourTileFinder;
     private TileSelection tileSelection;
+    private EffectTilePositions effectTilePositions;
     private Player[] players;
     private PlaceTiles placeTiles;
     public override void OnLand(Vector2Int landedPosition)
@@ -14,10 +15,15 @@ public class JellyFishTile : EffectTile
         neighbourTileFinder = FindAnyObjectByType<NeighbourTileFinder>();
         placeTiles = FindAnyObjectByType<PlaceTiles>();
         players = FindObjectsOfType<Player>();
+        effectTilePositions = FindAnyObjectByType<EffectTilePositions>();
         
         Vector2Int[] adjacentTiles = neighbourTileFinder.FindAdjacentTiles(landedPosition, tileSelection.PlacedTiles);
-        foreach (var tile in adjacentTiles) {
-            placeTiles.PlaceTile(this, tile);
+        foreach (var tilePos in adjacentTiles) {
+            if(effectTilePositions.TryGetEffectTile(tilePos, out var effectTileInfo)) {
+                if(!effectTileInfo.EffectTile.IsIndestructable) {
+                    placeTiles.PlaceTile(this, tilePos);
+                }
+            }    
         }
     }
 

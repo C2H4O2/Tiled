@@ -102,7 +102,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tileToPlace: {fileID: 11400000, guid: aadaec39daa81734ca63500d83c500b9, type: 2}
-  id: 0
+  id: 2
   isDirectional: 1
   isIndestructable: 0
-  description: 
+  isIrreplaceable: 1
+  description: Kills opponents but your team can walk over them (faces your team
+    if it belongs to you)

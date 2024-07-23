@@ -5995,21 +5995,49 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7246596575568772492, guid: b22c4973443a812409f0872cd48678a0, type: 3}
-      propertyPath: rareTiles.Array.size
+      propertyPath: epicTiles.Array.size
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7246596575568772492, guid: b22c4973443a812409f0872cd48678a0, type: 3}
+      propertyPath: rareTiles.Array.size
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7246596575568772492, guid: b22c4973443a812409f0872cd48678a0, type: 3}
       propertyPath: commonTiles.Array.size
-      value: 4
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7246596575568772492, guid: b22c4973443a812409f0872cd48678a0, type: 3}
-      propertyPath: rareTiles.Array.data[3]
+      propertyPath: epicTiles.Array.data[2]
       value: 
       objectReference: {fileID: 4539180927304038756, guid: e6e3546f406f6f44e87fac8e12e8de2c, type: 3}
     - target: {fileID: 7246596575568772492, guid: b22c4973443a812409f0872cd48678a0, type: 3}
-      propertyPath: commonTiles.Array.data[1]
+      propertyPath: epicTiles.Array.data[3]
+      value: 
+      objectReference: {fileID: 4539180927304038756, guid: 0c83d7a425cb9624a83997faf8bcd7d0, type: 3}
+    - target: {fileID: 7246596575568772492, guid: b22c4973443a812409f0872cd48678a0, type: 3}
+      propertyPath: rareTiles.Array.data[0]
+      value: 
+      objectReference: {fileID: 4539180927304038756, guid: cc882bbbe5b0c6c4289f4637aff36bf4, type: 3}
+    - target: {fileID: 7246596575568772492, guid: b22c4973443a812409f0872cd48678a0, type: 3}
+      propertyPath: rareTiles.Array.data[1]
       value: 
       objectReference: {fileID: 4539180927304038756, guid: cec9207aa9f6ce748b7c02e02e51b76c, type: 3}
+    - target: {fileID: 7246596575568772492, guid: b22c4973443a812409f0872cd48678a0, type: 3}
+      propertyPath: rareTiles.Array.data[2]
+      value: 
+      objectReference: {fileID: 4539180927304038756, guid: cec9207aa9f6ce748b7c02e02e51b76c, type: 3}
+    - target: {fileID: 7246596575568772492, guid: b22c4973443a812409f0872cd48678a0, type: 3}
+      propertyPath: rareTiles.Array.data[3]
+      value: 
+      objectReference: {fileID: 4539180927304038756, guid: cec9207aa9f6ce748b7c02e02e51b76c, type: 3}
+    - target: {fileID: 7246596575568772492, guid: b22c4973443a812409f0872cd48678a0, type: 3}
+      propertyPath: rareTiles.Array.data[4]
+      value: 
+      objectReference: {fileID: 4539180927304038756, guid: cec9207aa9f6ce748b7c02e02e51b76c, type: 3}
+    - target: {fileID: 7246596575568772492, guid: b22c4973443a812409f0872cd48678a0, type: 3}
+      propertyPath: commonTiles.Array.data[1]
+      value: 
+      objectReference: {fileID: 4539180927304038756, guid: 2474a5067c160ab49993e052b3dc49dd, type: 3}
     - target: {fileID: 7246596575568772492, guid: b22c4973443a812409f0872cd48678a0, type: 3}
       propertyPath: commonTiles.Array.data[2]
       value: 
