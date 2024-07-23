@@ -23,10 +23,17 @@ public class PlaceTiles : MonoBehaviour
     {
         bool isFacingPositive = true;
         placedTiles.SetTile((Vector3Int)tileToPlacePosition, effectTile.TileToPlace);
-        if(effectTile.IsDirectional && turnTracker.TeamTwoPlayers.Contains(turnTracker.QueryTurn())) {
-            var matrix = Matrix4x4.TRS(Vector3.zero, Quaternion.identity, new Vector3(-1, 1, 1));
-            placedTiles.SetTransformMatrix((Vector3Int)tileToPlacePosition, matrix);
-            isFacingPositive = false;
+        if(effectTile.IsDirectional) {
+            if(turnTracker.TeamTwoPlayers.Contains(turnTracker.QueryTurn()))
+            {
+                isFacingPositive = false;
+                if(effectTile.BlueTile == null || effectTile.RedTile == null) {
+                    var matrix = Matrix4x4.TRS(Vector3.zero, Quaternion.identity, new Vector3(-1, 1, 1));
+                    placedTiles.SetTransformMatrix((Vector3Int)tileToPlacePosition, matrix);
+                }
+            }
+            
+            
         }
         
         effectTilePositions.EffectTilePosition.Remove(tileToPlacePosition);
