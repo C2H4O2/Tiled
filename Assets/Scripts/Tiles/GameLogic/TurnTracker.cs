@@ -19,15 +19,19 @@ public class TurnTracker : MonoBehaviour
     public Player[] TeamOnePlayers { get => teamOnePlayers; }
     public Player[] TeamTwoPlayers { get => teamTwoPlayers; }
 
-    private void Start() {
+    private void OnEnable() {
         InitializeTurnOrder();
         RandomiseTurn();
         
-        currentPlayerTurn = turnOrder[0]; // Set the initial player turn
-        //MovesLeft = RollNDice(6,2);
+        currentPlayerTurn = turnOrder[0];
         movesLeft = Random.Range(4,7);
         currentPlayerTurn.FirstTurn = false;
         OnTurnChange.Invoke();
+    }
+    private void Start() {
+         // Set the initial player turn
+        //MovesLeft = RollNDice(6,2);
+        
     }
     
     public void TriggerDragDelay() {

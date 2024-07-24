@@ -41,11 +41,11 @@ public class DeckGenerator : MonoBehaviour
     {
         float random = Random.Range(0f, 1f);
 
-        if (random < 0.6f) // 60% chance for common cards
+        if (random < 0.5f) // 50% chance for common cards
         {
             return commonTiles[Random.Range(0, commonTiles.Length)];
         }
-        else if (random < 0.8f) // 20% chance for rare cards
+        else if (random < 0.8f) // 30% chance for rare cards
         {
             return rareTiles[Random.Range(0, rareTiles.Length)];
         }

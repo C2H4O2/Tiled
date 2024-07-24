@@ -102,9 +102,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tileToPlace: {fileID: 11400000, guid: a6286bac60a7f444f8abb2b5c0e4b72d, type: 2}
+  blueTile: {fileID: 0}
+  redTile: {fileID: 0}
   id: 4
   isDirectional: 0
   isIndestructable: 0
+  isIrreplaceable: 0
   description: Turn on or off the lights
   lightOnTile: {fileID: 11400000, guid: a6286bac60a7f444f8abb2b5c0e4b72d, type: 2}
   lightOffTile: {fileID: 11400000, guid: 7ea6c7e4b0f013b489dde25b29eeebf1, type: 2}

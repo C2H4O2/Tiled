@@ -102,6 +102,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tileToPlace: {fileID: 11400000, guid: aadaec39daa81734ca63500d83c500b9, type: 2}
+  blueTile: {fileID: 11400000, guid: 1e8cd2ecf2eeeff4d95e6cbeaa3ebd02, type: 2}
+  redTile: {fileID: 11400000, guid: 4e79dd9bce27645468e265783feca913, type: 2}
   id: 2
   isDirectional: 1
   isIndestructable: 0

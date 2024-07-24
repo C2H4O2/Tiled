@@ -81,5 +81,6 @@ public class EffectTilePositions : MonoBehaviour
         {
             effectTilePosition[keys[i]] = tempList[i];
         }
+        
     }
 }

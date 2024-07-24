@@ -34,6 +34,7 @@ public class Player : MonoBehaviour
         effectTilePositions = FindAnyObjectByType<EffectTilePositions>();
         playerInventory = GetComponent<PlayerInventory>();
     }
+    
     private void Start() {
         Respawn();
         UpdateAdjacentTiles();
@@ -93,7 +94,6 @@ public class Player : MonoBehaviour
 
     public void Respawn() {
         transform.position = tileSelection.CellToWorld(startingPosition);
-        playerTilePositions.UpdateAllPlayerTilePositions();
         playerPosition = startingPosition;
         if(turnTracker.QueryTurn() == this){
             turnTracker.CycleThroughTurn();

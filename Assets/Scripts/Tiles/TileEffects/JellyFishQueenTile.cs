@@ -7,7 +7,6 @@ public class JellyFishQueenTile : EffectTile
     private NeighbourTileFinder neighbourTileFinder;
     private TileSelection tileSelection;
     private EffectTilePositions effectTilePositions;
-    private Player[] players;
     private PlaceTiles placeTiles;
     [SerializeField] private EffectTile jellyFishClone;
     
@@ -16,7 +15,6 @@ public class JellyFishQueenTile : EffectTile
         tileSelection = FindAnyObjectByType<TileSelection>();
         neighbourTileFinder = FindAnyObjectByType<NeighbourTileFinder>();
         placeTiles = FindAnyObjectByType<PlaceTiles>();
-        players = FindObjectsOfType<Player>();
         effectTilePositions = FindAnyObjectByType<EffectTilePositions>();
         Vector2Int[] adjacentTiles = neighbourTileFinder.FindAdjacentTiles(landedPosition, tileSelection.PlacedTiles);
         foreach (var tilePos in adjacentTiles) {
@@ -27,20 +25,4 @@ public class JellyFishQueenTile : EffectTile
             }    
         }
     }
-
-    public override void OnRemoval()
-    {
-        effectTilePositions = FindAnyObjectByType<EffectTilePositions>();
-        if(effectTilePositions.TryGetAllEffectPositionsOfType(jellyFishClone, out List<Vector2Int> positions)) {
-            foreach (var position in positions) {
-                effectTilePositions.EffectTilePosition.Remove(position);
-                tileSelection.PlacedTiles.SetTile((Vector3Int)position, null);
-            }
-        }
-        else {
-            Debug.Log("no jellyfish clones");
-        }
-    }
-
-
 }
