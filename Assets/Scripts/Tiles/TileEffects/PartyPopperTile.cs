@@ -6,14 +6,19 @@ public class PartyPopperTile : EffectTile
 {
     private EffectTilePositions effectTilePositions;
     private PlaceTiles placeTiles;
+
     public override void OnLand(Vector2Int landedPosition) {
         effectTilePositions = FindAnyObjectByType<EffectTilePositions>();
-        placeTiles =FindAnyObjectByType<PlaceTiles>();
+        placeTiles = FindAnyObjectByType<PlaceTiles>();
+        
         effectTilePositions.ScrambleEffectTiles();
-        foreach (var key in effectTilePositions.EffectTilePosition.Keys)
+
+        List<Vector2Int> keys = new List<Vector2Int>(effectTilePositions.EffectTilePosition.Keys);
+
+        foreach (var key in keys)
         {
-            if(effectTilePositions.TryGetEffectTile(key, out var effectTileInfo))
-            placeTiles.PlaceTile(effectTileInfo.EffectTile, key);
+            if (effectTilePositions.TryGetEffectTile(key, out var effectTileInfo))
+                placeTiles.PartyPopperPlace(effectTileInfo.EffectTile, key, effectTileInfo.IsFacingPositive);
         }
     }
 }

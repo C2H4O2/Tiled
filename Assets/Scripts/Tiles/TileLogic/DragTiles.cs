@@ -75,7 +75,7 @@ public class DragTiles : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDra
             }
             Debug.Log("place tile");
             
-            placeTiles.PlaceTile(effectTile,tileSelection.HighlightedTilePosition);
+            placeTiles.PlaceTile(effectTile,tileSelection.HighlightedTilePosition, true);
             turnTracker.QueryTurn().PlayerInventory.RemoveTile(effectTile);
             turnTracker.QueryTurn().PlayerInventory.DrawTile();
             deckUIController.DisplayDeck();

@@ -20,7 +20,7 @@ public class JellyFishQueenTile : EffectTile
         foreach (var tilePos in adjacentTiles) {
             if(effectTilePositions.TryGetEffectTile(tilePos, out var effectTileInfo)) {
                 if(!effectTileInfo.EffectTile.IsIndestructable) {
-                    placeTiles.PlaceTile(jellyFishClone, tilePos);
+                    placeTiles.PlaceTile(jellyFishClone, tilePos, true);
                 }
             }    
         }

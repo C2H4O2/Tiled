@@ -6012,7 +6012,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7246596575568772492, guid: b22c4973443a812409f0872cd48678a0, type: 3}
       propertyPath: commonTiles.Array.size
-      value: 1
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7246596575568772492, guid: b22c4973443a812409f0872cd48678a0, type: 3}
       propertyPath: epicTiles.Array.data[2]
@@ -6053,15 +6053,15 @@ PrefabInstance:
     - target: {fileID: 7246596575568772492, guid: b22c4973443a812409f0872cd48678a0, type: 3}
       propertyPath: commonTiles.Array.data[1]
       value: 
-      objectReference: {fileID: 4539180927304038756, guid: 2474a5067c160ab49993e052b3dc49dd, type: 3}
+      objectReference: {fileID: 4539180927304038756, guid: a7ed1e6ff662c5e469e2e86a1e0ad05f, type: 3}
     - target: {fileID: 7246596575568772492, guid: b22c4973443a812409f0872cd48678a0, type: 3}
       propertyPath: commonTiles.Array.data[2]
       value: 
-      objectReference: {fileID: 4539180927304038756, guid: cec9207aa9f6ce748b7c02e02e51b76c, type: 3}
+      objectReference: {fileID: 4539180927304038756, guid: d44cd5c5fb1eb0a4ea58462dd9156a77, type: 3}
     - target: {fileID: 7246596575568772492, guid: b22c4973443a812409f0872cd48678a0, type: 3}
       propertyPath: commonTiles.Array.data[3]
       value: 
-      objectReference: {fileID: 4539180927304038756, guid: cec9207aa9f6ce748b7c02e02e51b76c, type: 3}
+      objectReference: {fileID: 4539180927304038756, guid: a7ed1e6ff662c5e469e2e86a1e0ad05f, type: 3}
     - target: {fileID: 7246596575568772492, guid: b22c4973443a812409f0872cd48678a0, type: 3}
       propertyPath: legendaryTiles.Array.size
       value: 1

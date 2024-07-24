@@ -35,10 +35,10 @@ public class JumpTile : EffectTile
                 }
             }
             if(tileSelection.PlacedTiles.HasTile((Vector3Int)(landedPosition + new Vector2Int(sign * moveDistance , 0)))) {
-                targetPlayer.MovePlayer(landedPosition + new Vector2Int(sign * moveDistance, 0));
-                if(playerTilePositions.GetPlayerAtTilePosition(landedPosition) != null) {
-                    playerTilePositions.GetPlayerAtTilePosition(landedPosition).Respawn();
+                if(playerTilePositions.GetPlayerAtTilePosition(targetPosition) != null) {
+                    playerTilePositions.GetPlayerAtTilePosition(targetPosition).Respawn();
                 }
+                targetPlayer.MovePlayer(landedPosition + new Vector2Int(sign * moveDistance, 0));
             }
             else {
                 targetPlayer.Respawn();

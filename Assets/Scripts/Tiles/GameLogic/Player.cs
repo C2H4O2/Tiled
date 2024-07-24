@@ -85,7 +85,12 @@ public class Player : MonoBehaviour
         } else {
             Debug.LogWarning($"No effect tile to land on at {cellPosition}");
         }
-        
+    }
+
+    public void MovePlayerWithoutTriggeringEffect(Vector2Int cellPosition) {
+        transform.position = tileSelection.CellToWorld(cellPosition);
+        playerPosition = cellPosition;
+        playerTilePositions.UpdateAllPlayerTilePositions();
     }
 
     public void UpdateAdjacentTiles() {
