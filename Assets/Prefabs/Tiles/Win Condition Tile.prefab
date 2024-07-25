@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 7569254638216791265}
   - component: {fileID: 1263503339042224211}
   - component: {fileID: 197892467037603420}
-  - component: {fileID: 5180291798968437824}
+  - component: {fileID: 9071263160178290354}
   m_Layer: 5
-  m_Name: Respawn Tile Blue
+  m_Name: Win Condition Tile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -67,7 +67,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -594858403, guid: 6dfd6b66e1707754ea6de85adb6175a8, type: 3}
+  m_Sprite: {fileID: -1446582044, guid: 6dfd6b66e1707754ea6de85adb6175a8, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -89,7 +89,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eaf56aac07550b34e8c929bb01fab435, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &5180291798968437824
+--- !u!114 &9071263160178290354
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -98,14 +98,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 4539180927304038756}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 974bda0593c48a74ab586d7216bf0e89, type: 3}
+  m_Script: {fileID: 11500000, guid: 36a9303a3abcbec43bf418ab10584422, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tileToPlace: {fileID: 11400000, guid: 19f819db8d323c24eaa6b5593b470348, type: 2}
-  blueTile: {fileID: 0}
-  redTile: {fileID: 0}
-  id: 9
-  isDirectional: 0
+  tileToPlace: {fileID: 11400000, guid: 2c016c73913ff0c44b74d248efa24ea2, type: 2}
+  blueTile: {fileID: 11400000, guid: 2915c5e277434d5408d3312514a2dfb4, type: 2}
+  redTile: {fileID: 11400000, guid: f53202202fb97e740adb14ebab98daa5, type: 2}
+  id: 16
+  isDirectional: 1
   isIndestructable: 1
-  isIrreplaceable: 0
-  description: 
+  isIrreplaceable: 1
+  description: Touch it you win
