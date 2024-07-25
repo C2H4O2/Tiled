@@ -26,11 +26,10 @@ public class TurnTracker : MonoBehaviour
         currentPlayerTurn = turnOrder[0];
         movesLeft = Random.Range(4,7);
         currentPlayerTurn.FirstTurn = false;
-        OnTurnChange.Invoke();
+        
     }
     private void Start() {
-         // Set the initial player turn
-        //MovesLeft = RollNDice(6,2);
+        OnTurnChange.Invoke();
         
     }
     
