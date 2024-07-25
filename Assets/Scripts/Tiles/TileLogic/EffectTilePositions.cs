@@ -60,27 +60,33 @@ public class EffectTilePositions : MonoBehaviour
 
     public void ScrambleEffectTiles()
     {
-        List<EffectTileInfo> tempList = new List<EffectTileInfo>();
-        foreach (EffectTileInfo effectTileInfo in effectTilePosition.Values)
+        List<Vector2Int> destructibleKeys = new List<Vector2Int>();
+        List<EffectTileInfo> destructibleTiles = new List<EffectTileInfo>();
+
+        // Collect destructible tiles and their positions
+        foreach (var kvp in effectTilePosition)
         {
-            tempList.Add(effectTileInfo);
+            if (!kvp.Value.EffectTile.IsIndestructable)
+            {
+                destructibleKeys.Add(kvp.Key);
+                destructibleTiles.Add(kvp.Value);
+            }
         }
 
-        // Shuffle the list using Fisher-Yates algorithm
-        for (int i = 0; i < tempList.Count; i++)
+        // Shuffle the destructible tiles using Fisher-Yates algorithm
+        for (int i = 0; i < destructibleTiles.Count; i++)
         {
-            int rng = Random.Range(0, tempList.Count);
-            EffectTileInfo temp = tempList[i];
-            tempList[i] = tempList[rng];
-            tempList[rng] = temp;
+            int rng = Random.Range(0, destructibleTiles.Count);
+            EffectTileInfo temp = destructibleTiles[i];
+            destructibleTiles[i] = destructibleTiles[rng];
+            destructibleTiles[rng] = temp;
         }
 
-        // Update the dictionary with new scrambled values
-        List<Vector2Int> keys = new List<Vector2Int>(effectTilePosition.Keys);
-        for (int i = 0; i < keys.Count; i++)
+        // Update the dictionary with new scrambled values for destructible tiles
+        for (int i = 0; i < destructibleKeys.Count; i++)
         {
-            effectTilePosition[keys[i]] = tempList[i];
+            effectTilePosition[destructibleKeys[i]] = destructibleTiles[i];
         }
-        
     }
+
 }

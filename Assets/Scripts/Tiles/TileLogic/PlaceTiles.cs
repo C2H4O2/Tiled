@@ -23,10 +23,7 @@ public class PlaceTiles : MonoBehaviour
     {
         bool isFacingPositive = true;
         Vector3Int tilemapPosition = (Vector3Int)tileToPlacePosition;
-        
-        // Reset the transformation matrix at the position
         placedTiles.SetTransformMatrix(tilemapPosition, Matrix4x4.identity);
-        
         placedTiles.SetTile(tilemapPosition, effectTile.TileToPlace);
 
         if (effectTile.IsDirectional)
@@ -71,6 +68,41 @@ public class PlaceTiles : MonoBehaviour
                 }
             }
         }
+
+        foreach (Player player in players)
+        {
+            player.UpdateAdjacentTiles();
+        }
+    }
+
+    public void InitialiseTile(EffectTile effectTile, Vector2Int tileToPlacePosition, bool isFacingPositive)
+    {
+        Vector3Int tilemapPosition = (Vector3Int)tileToPlacePosition;
+        placedTiles.SetTransformMatrix(tilemapPosition, Matrix4x4.identity);
+        placedTiles.SetTile(tilemapPosition, effectTile.TileToPlace);
+
+        if (isFacingPositive)
+        {
+            if (effectTile.BlueTile == null || effectTile.RedTile == null)
+            {
+                // Flip the tile if no specific variants are available
+                var matrix = Matrix4x4.TRS(Vector3.zero, Quaternion.identity, new Vector3(-1, 1, 1));
+                placedTiles.SetTransformMatrix(tilemapPosition, matrix);
+            }
+            else if (effectTile.BlueTile != null && isFacingPositive)
+            {
+                // Place blue tile facing positive
+                placedTiles.SetTile(tilemapPosition, effectTile.BlueTile);
+            }
+        }
+        else if(effectTile.RedTile != null){
+            placedTiles.SetTile(tilemapPosition, effectTile.RedTile);
+                var matrix = Matrix4x4.TRS(Vector3.zero, Quaternion.identity, new Vector3(-1, 1, 1));
+                placedTiles.SetTransformMatrix(tilemapPosition, matrix);
+        }
+
+        effectTilePositions.EffectTilePosition.Remove(tileToPlacePosition);
+        effectTilePositions.AddEffectTile(tileToPlacePosition, deckGenerator.GetTileByEffectTile(effectTile).GetComponent<EffectTile>(), isFacingPositive);
 
         foreach (Player player in players)
         {

@@ -15,10 +15,7 @@ public class DeckGenerator : MonoBehaviour
     [SerializeField] private GameObject[] allTiles;
 
     private Dictionary<int, GameObject> tileDictionary = new Dictionary<int, GameObject>();
-
-    private void Start()
-    {
-        // Combine all tile arrays into one
+    private void Awake() {
         allTiles = commonTiles.Concat(rareTiles)
                              .Concat(epicTiles)
                              .Concat(legendaryTiles)
