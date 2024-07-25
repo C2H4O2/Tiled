@@ -17,11 +17,11 @@ public class WinConditionTile : EffectTile
         effectTilePositions = FindAnyObjectByType<EffectTilePositions>();
         Player player = playerTilePositions.GetPlayerAtTilePosition(landedPosition);
         if(effectTilePositions.TryGetEffectTile(landedPosition, out var effectTileInfo)){
-            if(turnTracker.TeamOnePlayers.Contains(player) && effectTileInfo.IsFacingPositive)
+            if(turnTracker.TeamOnePlayers.Contains(player) && !effectTileInfo.IsFacingPositive)
             {
                 Debug.Log("Team One Wins");
             }
-            else if(turnTracker.TeamTwoPlayers.Contains(player) && !effectTileInfo.IsFacingPositive)
+            else if(turnTracker.TeamTwoPlayers.Contains(player) && effectTileInfo.IsFacingPositive)
             {
                 Debug.Log("Team Two wins");
             }
