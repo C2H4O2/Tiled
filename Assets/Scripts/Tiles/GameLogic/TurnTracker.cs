@@ -6,12 +6,12 @@ public class TurnTracker : MonoBehaviour
 {
     [SerializeField] private Player[] teamOnePlayers;
     [SerializeField] private Player[] teamTwoPlayers;
-    [SerializeField] private Player[] turnOrder;
-    [SerializeField] private ushort turn = 0;
-    [SerializeField] private Player currentPlayerTurn;
-    [SerializeField] private int movesLeft;
+    private Player[] turnOrder;
+    private ushort turn = 0;
+    private Player currentPlayerTurn;
+    private int movesLeft;
     [SerializeField] private UnityEvent onTurnChange; //change camera
-    [SerializeField] private bool draggingTile;
+    private bool draggingTile;
 
     public UnityEvent OnTurnChange { get => onTurnChange; }
     public int MovesLeft { get => movesLeft; set => movesLeft = value; }

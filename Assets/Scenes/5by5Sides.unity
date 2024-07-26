@@ -309,7 +309,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &342370865
 RectTransform:
   m_ObjectHideFlags: 0
@@ -605,7 +605,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &515432865
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1163,7 +1163,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &620841027
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1393,11 +1393,11 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 515432865}
   - {fileID: 968962426}
+  - {fileID: 1232823023}
+  - {fileID: 515432865}
   - {fileID: 760988411}
   - {fileID: 342370865}
-  - {fileID: 1232823023}
   - {fileID: 620841027}
   - {fileID: 653784311}
   m_Father: {fileID: 0}
@@ -1538,7 +1538,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &760988409
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6060,11 +6060,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7246596575568772492, guid: b22c4973443a812409f0872cd48678a0, type: 3}
       propertyPath: rareTiles.Array.size
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7246596575568772492, guid: b22c4973443a812409f0872cd48678a0, type: 3}
       propertyPath: commonTiles.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7246596575568772492, guid: b22c4973443a812409f0872cd48678a0, type: 3}
       propertyPath: uniqueTiles.Array.size
@@ -6097,23 +6097,23 @@ PrefabInstance:
     - target: {fileID: 7246596575568772492, guid: b22c4973443a812409f0872cd48678a0, type: 3}
       propertyPath: rareTiles.Array.data[2]
       value: 
-      objectReference: {fileID: 4539180927304038756, guid: 38f84313d85977c41bd8608bc27a88f7, type: 3}
+      objectReference: {fileID: 4539180927304038756, guid: 3f2ef830802882d43945224d2b2655eb, type: 3}
     - target: {fileID: 7246596575568772492, guid: b22c4973443a812409f0872cd48678a0, type: 3}
       propertyPath: rareTiles.Array.data[3]
       value: 
-      objectReference: {fileID: 4539180927304038756, guid: 38f84313d85977c41bd8608bc27a88f7, type: 3}
+      objectReference: {fileID: 4539180927304038756, guid: 3f2ef830802882d43945224d2b2655eb, type: 3}
     - target: {fileID: 7246596575568772492, guid: b22c4973443a812409f0872cd48678a0, type: 3}
       propertyPath: rareTiles.Array.data[4]
       value: 
-      objectReference: {fileID: 4539180927304038756, guid: cec9207aa9f6ce748b7c02e02e51b76c, type: 3}
+      objectReference: {fileID: 4539180927304038756, guid: 3f2ef830802882d43945224d2b2655eb, type: 3}
     - target: {fileID: 7246596575568772492, guid: b22c4973443a812409f0872cd48678a0, type: 3}
       propertyPath: commonTiles.Array.data[1]
       value: 
-      objectReference: {fileID: 4539180927304038756, guid: 3f2ef830802882d43945224d2b2655eb, type: 3}
+      objectReference: {fileID: 4539180927304038756, guid: a7ed1e6ff662c5e469e2e86a1e0ad05f, type: 3}
     - target: {fileID: 7246596575568772492, guid: b22c4973443a812409f0872cd48678a0, type: 3}
       propertyPath: commonTiles.Array.data[2]
       value: 
-      objectReference: {fileID: 4539180927304038756, guid: d44cd5c5fb1eb0a4ea58462dd9156a77, type: 3}
+      objectReference: {fileID: 4539180927304038756, guid: cc882bbbe5b0c6c4289f4637aff36bf4, type: 3}
     - target: {fileID: 7246596575568772492, guid: b22c4973443a812409f0872cd48678a0, type: 3}
       propertyPath: commonTiles.Array.data[3]
       value: 
