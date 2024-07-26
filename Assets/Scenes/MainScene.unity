@@ -600,12 +600,12 @@ GameObject:
   - component: {fileID: 515432867}
   - component: {fileID: 515432866}
   m_Layer: 5
-  m_Name: Function Test Button
+  m_Name: Settings Menu Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &515432865
 RectTransform:
   m_ObjectHideFlags: 0
@@ -623,8 +623,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -12.399902, y: -75.19971}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: -1722, y: -75.19971}
+  m_SizeDelta: {x: 160, y: 160}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &515432866
 MonoBehaviour:
@@ -670,9 +670,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1262501992}
-        m_TargetAssemblyTypeName: DeckUIController, Assembly-CSharp
-        m_MethodName: DisplayDeck
+      - m_Target: {fileID: 890729866}
+        m_TargetAssemblyTypeName: SettingsMenu, Assembly-CSharp
+        m_MethodName: OpenSettings
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -695,7 +695,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.20392157}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1393,12 +1393,12 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 968962426}
   - {fileID: 1232823023}
   - {fileID: 515432865}
   - {fileID: 760988411}
   - {fileID: 342370865}
   - {fileID: 620841027}
+  - {fileID: 968962426}
   - {fileID: 653784311}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1670,6 +1670,50 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coordinateTextField: {fileID: 760988409}
+--- !u!1 &890729864
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 890729865}
+  - component: {fileID: 890729866}
+  m_Layer: 0
+  m_Name: Menu Controller
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &890729865
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 890729864}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 735037023}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &890729866
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 890729864}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72dfe1f80ef2fa9429bae5b1766f1514, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &960353811
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1789,7 +1833,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &968962426
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2149,17 +2193,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 4055925568148909834, guid: 4a7a220e45859914b99bc94553675de8, type: 3}
   m_PrefabInstance: {fileID: 2615866349555005252}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1262501992 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 370135945899064463, guid: b22c4973443a812409f0872cd48678a0, type: 3}
-  m_PrefabInstance: {fileID: 5205535727596433561}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 385203994bef9d646b0509ffcd815aa3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!224 &1274536323 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4055925568148909834, guid: 4a7a220e45859914b99bc94553675de8, type: 3}
@@ -2370,7 +2403,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Do thing '
+  m_text: 'Settings
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -5998,6 +6033,10 @@ PrefabInstance:
       propertyPath: onTurnChange.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 968962429}
+    - target: {fileID: 3493390086947434527, guid: b22c4973443a812409f0872cd48678a0, type: 3}
+      propertyPath: onTurnChange.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 4013382174783257817, guid: b22c4973443a812409f0872cd48678a0, type: 3}
       propertyPath: m_Name
       value: Defaults
@@ -6156,6 +6195,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6734482463699204753, guid: b22c4973443a812409f0872cd48678a0, type: 3}
       insertIndex: -1
       addedObject: {fileID: 541415130}
+    - targetCorrespondingSourceObject: {fileID: 6734482463699204753, guid: b22c4973443a812409f0872cd48678a0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 890729865}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b22c4973443a812409f0872cd48678a0, type: 3}
 --- !u!1660057539 &9223372036854775807

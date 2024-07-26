@@ -9,7 +9,9 @@ public class FrameRateSetter : MonoBehaviour
     void Start()
     {
         QualitySettings.vSyncCount = 0;
+        targetFrameRate = PlayerPrefs.GetInt("FrameRate");
         Application.targetFrameRate = targetFrameRate;
+        FPSSlider.value = targetFrameRate;
     }
 
     
@@ -17,5 +19,6 @@ public class FrameRateSetter : MonoBehaviour
     {
         targetFrameRate = (int)FPSSlider.value;
         Application.targetFrameRate = targetFrameRate;
+        PlayerPrefs.SetInt("FrameRate", targetFrameRate);
     }
 }
