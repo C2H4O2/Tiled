@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class SettingsMenu : MonoBehaviour
+public class Settings : MonoBehaviour
 {
     public void OpenSettings() {
         SceneManager.LoadScene(2, LoadSceneMode.Additive);
