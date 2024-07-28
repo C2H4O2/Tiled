@@ -23,10 +23,15 @@ public class BombTile : EffectTile
         playerTilePositions.GetPlayerAtTilePosition(tilePosition).Respawn();
         foreach (var adjacentTile in neighbourTileFinder.FindAdjacentTiles(tilePosition, tileSelection.BoardTile))
         {
-            if (!playerTilePositions.StartingPositions.Contains(adjacentTile)) {
-                tileSelection.PlacedTiles.SetTile((Vector3Int)adjacentTile, null);
-                effectTilePositions.EffectTilePosition.Remove(adjacentTile);
+            if (effectTilePositions.TryGetEffectTile(adjacentTile, out var effectTileInfo)) {
+                if(!effectTileInfo.EffectTile.IsIndestructable) {
+                    if (!playerTilePositions.StartingPositions.Contains(adjacentTile)) {
+                        tileSelection.PlacedTiles.SetTile((Vector3Int)adjacentTile, null);
+                        effectTilePositions.EffectTilePosition.Remove(adjacentTile);
+                    }
+                }
             }
+            
             if(playerTilePositions.GetPlayerAtTilePosition(adjacentTile) != null)
                 playerTilePositions.GetPlayerAtTilePosition(adjacentTile).Respawn();
         }

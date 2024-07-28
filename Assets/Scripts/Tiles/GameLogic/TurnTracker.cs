@@ -47,7 +47,8 @@ public class TurnTracker : MonoBehaviour
 
     public int RollDice(int sides)
     {
-        return Random.Range(1, sides+1); // include 1 exclude 7
+       
+        return Random.Range(3, sides+1); // include 3 exclude 7
     }
     
     public int RollNDice(int sides, int numberOfRolls)
@@ -91,7 +92,7 @@ public class TurnTracker : MonoBehaviour
         currentPlayerTurn = turnOrder[turn % turnOrder.Length];
         if(currentPlayerTurn.FirstTurn) {
             //movesLeft = RollNDice(6,2);
-            movesLeft = Random.Range(4,7);
+            movesLeft = Random.Range(3,7);
             currentPlayerTurn.FirstTurn=false;
         }
         else {
