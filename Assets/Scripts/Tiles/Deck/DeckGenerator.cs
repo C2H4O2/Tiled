@@ -17,10 +17,10 @@ public class DeckGenerator : MonoBehaviour
     private Dictionary<int, GameObject> tileDictionary = new Dictionary<int, GameObject>();
     private void Awake() {
         allTiles = commonTiles.Concat(rareTiles)
-                             .Concat(epicTiles)
-                             .Concat(legendaryTiles)
-                             .Concat(uniqueTiles)
-                             .ToArray();
+                            .Concat(epicTiles)
+                            .Concat(legendaryTiles)
+                            .Concat(uniqueTiles)
+                            .ToArray();
 
         // Assign unique IDs to each tile and populate the dictionary
         for (int i = 0; i < allTiles.Length; i++)
