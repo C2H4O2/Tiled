@@ -43,7 +43,7 @@ public class Player : MonoBehaviour
     private void Update() {
         if(CanMove()) {
             //Debug.Log("Move to" + tileSelection.HighlightedTilePosition);
-            MovePlayer(tileSelection.HighlightedTilePosition);
+            MovePlayer(tileSelection.HighlightedTilePosition, 0.2f);
             turnTracker.MovesLeft-=1;
             UpdateAdjacentTiles();
             playerTilePositions.UpdateAllPlayerTilePositions();
@@ -75,8 +75,9 @@ public class Player : MonoBehaviour
         yield return new WaitForSeconds(seconds);
     }
 
-    public void MovePlayer(Vector2Int cellPosition) {
-        transform.position = tileSelection.CellToWorld(cellPosition);
+    public void MovePlayer(Vector2Int cellPosition, float timeToMove) {
+        transform.LeanMove(tileSelection.CellToWorld(cellPosition), timeToMove).setEaseOutCirc();
+        //transform.position = tileSelection.CellToWorld(cellPosition);
         playerPosition = cellPosition;
         playerTilePositions.UpdateAllPlayerTilePositions();
         
@@ -87,8 +88,8 @@ public class Player : MonoBehaviour
         }
     }
 
-    public void MovePlayerWithoutTriggeringEffect(Vector2Int cellPosition) {
-        transform.position = tileSelection.CellToWorld(cellPosition);
+    public void MovePlayerWithoutTriggeringEffect(Vector2Int cellPosition, float timeToMove) {
+        transform.LeanMove(tileSelection.CellToWorld(cellPosition), timeToMove).setEaseOutCirc();
         playerPosition = cellPosition;
         playerTilePositions.UpdateAllPlayerTilePositions();
     }

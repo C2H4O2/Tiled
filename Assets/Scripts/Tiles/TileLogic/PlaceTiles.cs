@@ -64,7 +64,7 @@ public class PlaceTiles : MonoBehaviour
             {
                 if (tileToPlacePosition == players[i].PlayerPosition)
                 {
-                    players[i].MovePlayer(tileToPlacePosition);
+                    players[i].MovePlayer(tileToPlacePosition, 0f);
                 }
             }
         }
