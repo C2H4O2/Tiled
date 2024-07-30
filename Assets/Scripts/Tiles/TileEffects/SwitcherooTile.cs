@@ -26,8 +26,8 @@ public class SwitcherooTile : EffectTile
 
     private void switchPositions(Player[] teamPlayers) {
             Vector2Int tempPos = teamPlayers[0].PlayerPosition;
-            teamPlayers[0].MovePlayerWithoutTriggeringEffect(teamPlayers[1].PlayerPosition);
-            teamPlayers[1].MovePlayerWithoutTriggeringEffect(tempPos);
+            teamPlayers[0].MovePlayerWithoutTriggeringEffect(teamPlayers[1].PlayerPosition, 0f);
+            teamPlayers[1].MovePlayerWithoutTriggeringEffect(tempPos, 0f);
         }
 
 }
