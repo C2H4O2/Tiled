@@ -24,7 +24,8 @@ public class TurnTracker : MonoBehaviour
         RandomiseTurn();
         
         currentPlayerTurn = turnOrder[0];
-        movesLeft = Random.Range(4,7);
+        movesLeft = PityDiceRoll();
+        //movesLeft = Random.Range(4,7);
         currentPlayerTurn.FirstTurn = false;
         
     }
@@ -47,7 +48,8 @@ public class TurnTracker : MonoBehaviour
 
     public int RollDice(int sides)
     {
-        return Random.Range(1, sides+1); // include 1 exclude 7
+        int roll = Random.Range(1, sides+1);
+        return Mathf.Max(roll, 3);
     }
     
     public int RollNDice(int sides, int numberOfRolls)
@@ -60,6 +62,13 @@ public class TurnTracker : MonoBehaviour
         return sum;
     }
     
+    public int PityDiceRoll() {
+        int roll = Random.Range(1, 7);
+        if(roll < 3) {
+            roll += Random.Range(1, 7);
+        }
+        return roll;
+    }
     
     private void InitializeTurnOrder() 
     {
@@ -89,14 +98,9 @@ public class TurnTracker : MonoBehaviour
     {  
         turn += 1;
         currentPlayerTurn = turnOrder[turn % turnOrder.Length];
-        if(currentPlayerTurn.FirstTurn) {
-            //movesLeft = RollNDice(6,2);
-            movesLeft = Random.Range(4,7);
-            currentPlayerTurn.FirstTurn=false;
-        }
-        else {
-            movesLeft = RollDice(6);
-        }
+        movesLeft = PityDiceRoll();
+        //movesLeft = RollDice(6);
+        
         
         OnTurnChange.Invoke();
     }

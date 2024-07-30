@@ -100,7 +100,7 @@ public class Player : MonoBehaviour
     public void Respawn() {
         transform.position = tileSelection.CellToWorld(startingPosition);
         playerPosition = startingPosition;
-        if(turnTracker.QueryTurn() == this){
+        if(turnTracker.QueryTurn() == this && !firstTurn){
             turnTracker.CycleThroughTurn();
             Debug.Log("You died");
         }
