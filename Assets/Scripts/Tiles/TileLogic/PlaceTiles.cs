@@ -89,7 +89,7 @@ public class PlaceTiles : MonoBehaviour
                 var matrix = Matrix4x4.TRS(Vector3.zero, Quaternion.identity, new Vector3(-1, 1, 1));
                 placedTiles.SetTransformMatrix(tilemapPosition, matrix);
             }
-            else if (effectTile.BlueTile != null && isFacingPositive)
+            else if (effectTile.BlueTile != null)
             {
                 // Place blue tile facing positive
                 placedTiles.SetTile(tilemapPosition, effectTile.BlueTile);

@@ -100,7 +100,7 @@ public class TurnTracker : MonoBehaviour
         currentPlayerTurn = turnOrder[turn % turnOrder.Length];
         movesLeft = PityDiceRoll();
         //movesLeft = RollDice(6);
-        
+        currentPlayerTurn.PlayerInventory.ReDrawDeck();
         
         OnTurnChange.Invoke();
     }

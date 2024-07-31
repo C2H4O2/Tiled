@@ -108,4 +108,5 @@ MonoBehaviour:
   isDirectional: 0
   isIndestructable: 0
   isIrreplaceable: 1
+  isTrap: 1
   description: End the current player's turn

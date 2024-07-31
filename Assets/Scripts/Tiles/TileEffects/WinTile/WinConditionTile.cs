@@ -8,7 +8,7 @@ public class WinConditionTile : EffectTile
     private PlayerTilePositions playerTilePositions;
     private TurnTracker turnTracker;
     private EffectTilePositions effectTilePositions;
-    
+    [SerializeField] GameObject playAgainButton;
     
     public override void OnLand(Vector2Int landedPosition)
     {
@@ -20,10 +20,12 @@ public class WinConditionTile : EffectTile
             if(turnTracker.TeamOnePlayers.Contains(player) && !effectTileInfo.IsFacingPositive)
             {
                 Debug.Log("Team One Wins");
+                playAgainButton.SetActive(true);
             }
             else if(turnTracker.TeamTwoPlayers.Contains(player) && effectTileInfo.IsFacingPositive)
             {
                 Debug.Log("Team Two wins");
+                playAgainButton.SetActive(true);
             }
             else
             {

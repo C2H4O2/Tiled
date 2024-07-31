@@ -41,4 +41,11 @@ public class PlayerInventory : MonoBehaviour
             inventory[index] = tileToAdd;
         }
     }
+
+    public void ReDrawDeck() {
+        inventory.Clear();
+        for (int i = 0; i < 6; i++) {     
+            DrawTile();
+        }
+    }
 }

@@ -13,7 +13,7 @@ public abstract class EffectTile : MonoBehaviour
     [SerializeField] private bool isDirectional;
     [SerializeField] private bool isIndestructable;
     [SerializeField] private bool isIrreplaceable;
-    
+    [SerializeField] private bool isTrap;
     [SerializeField][TextArea] private string description;
     
 
@@ -22,6 +22,7 @@ public abstract class EffectTile : MonoBehaviour
     public bool IsIndestructable { get => isIndestructable; }
     public Tile TileToPlace { get => tileToPlace; set => tileToPlace = value; }
     public bool IsIrreplaceable { get => isIrreplaceable; }
+    public bool IsTrap {get => isTrap; }
     public Tile BlueTile { get => blueTile; }
     public Tile RedTile { get => redTile; }
 
