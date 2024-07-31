@@ -309,7 +309,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &342370865
 RectTransform:
   m_ObjectHideFlags: 0
@@ -326,7 +326,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 0, y: -112}
+  m_AnchoredPosition: {x: 0, y: -137.99994}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &342370866
@@ -932,8 +932,9 @@ GameObject:
   m_Component:
   - component: {fileID: 541415130}
   - component: {fileID: 541415131}
+  - component: {fileID: 541415132}
   m_Layer: 0
-  m_Name: Win Tile Initialiser
+  m_Name: Tile Initialiser
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -969,6 +970,26 @@ MonoBehaviour:
   blueBasePos: {x: -7, y: 0}
   redBasePos: {x: 7, y: 0}
   winConditionTilePrefab: {fileID: 4539180927304038756, guid: b7e10c3dc2eabe04bba7afe08457eed1, type: 3}
+--- !u!114 &541415132
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 541415129}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78b56ef43197ab841a82df49f446e7e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  blueRespawnTile: {fileID: 5180291798968437824, guid: 9317878cb548f48478557813b36771cf, type: 3}
+  redRespawnTile: {fileID: -8542657964058263975, guid: 9935baea385cf3e479705b09fa66b6c6, type: 3}
+  blueSpawnPositions:
+  - {x: -7, y: 4}
+  - {x: -7, y: -4}
+  redSpawnPositions:
+  - {x: 7, y: 4}
+  - {x: 7, y: -4}
 --- !u!1001 &589794444
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1551,7 +1572,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &760988409
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1667,7 +1688,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 0, y: -52}
+  m_AnchoredPosition: {x: 0, y: -78}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &760988412
@@ -6300,7 +6321,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7246596575568772492, guid: b22c4973443a812409f0872cd48678a0, type: 3}
       propertyPath: commonTiles.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7246596575568772492, guid: b22c4973443a812409f0872cd48678a0, type: 3}
       propertyPath: uniqueTiles.Array.size
@@ -6345,18 +6366,22 @@ PrefabInstance:
     - target: {fileID: 7246596575568772492, guid: b22c4973443a812409f0872cd48678a0, type: 3}
       propertyPath: commonTiles.Array.data[1]
       value: 
-      objectReference: {fileID: 4539180927304038756, guid: a57a962f8108c75499726a55ca4a7887, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 7246596575568772492, guid: b22c4973443a812409f0872cd48678a0, type: 3}
       propertyPath: commonTiles.Array.data[2]
       value: 
-      objectReference: {fileID: 4539180927304038756, guid: cc882bbbe5b0c6c4289f4637aff36bf4, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 7246596575568772492, guid: b22c4973443a812409f0872cd48678a0, type: 3}
       propertyPath: commonTiles.Array.data[3]
       value: 
-      objectReference: {fileID: 4539180927304038756, guid: d44cd5c5fb1eb0a4ea58462dd9156a77, type: 3}
+      objectReference: {fileID: 0}
+    - target: {fileID: 7246596575568772492, guid: b22c4973443a812409f0872cd48678a0, type: 3}
+      propertyPath: commonTiles.Array.data[4]
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 7246596575568772492, guid: b22c4973443a812409f0872cd48678a0, type: 3}
       propertyPath: legendaryTiles.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7246596575568772492, guid: b22c4973443a812409f0872cd48678a0, type: 3}
       propertyPath: uniqueTiles.Array.data[1]
@@ -6369,7 +6394,7 @@ PrefabInstance:
     - target: {fileID: 7246596575568772492, guid: b22c4973443a812409f0872cd48678a0, type: 3}
       propertyPath: legendaryTiles.Array.data[1]
       value: 
-      objectReference: {fileID: 4539180927304038756, guid: 2474a5067c160ab49993e052b3dc49dd, type: 3}
+      objectReference: {fileID: 4539180927304038756, guid: a57a962f8108c75499726a55ca4a7887, type: 3}
     - target: {fileID: 8308984472825180121, guid: b22c4973443a812409f0872cd48678a0, type: 3}
       propertyPath: boardTiles
       value: 

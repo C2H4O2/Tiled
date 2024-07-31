@@ -36,11 +36,4 @@ public class PenguinTile : EffectTile
             
         }
     }
-
-    //check if tile 1 tile is not empty
-    //if empty then stop sliding
-    // if not empty and is a trap then activate effect
-    // if not empty then loop
-
-   
 }
