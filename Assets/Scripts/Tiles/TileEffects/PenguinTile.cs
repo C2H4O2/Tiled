@@ -32,6 +32,7 @@ public class PenguinTile : EffectTile
                 else {
                     targetPlayer.MovePlayer(targetPosition, 0.2f, 0);
                 }
+                //fix jump tile and penguin interaction
             }
             
         }

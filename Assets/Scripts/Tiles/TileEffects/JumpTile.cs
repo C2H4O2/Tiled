@@ -46,5 +46,6 @@ public class JumpTile : EffectTile
             
             
         }
+        playerTilePositions.UpdateAllPlayerTilePositions();
     }
 }
