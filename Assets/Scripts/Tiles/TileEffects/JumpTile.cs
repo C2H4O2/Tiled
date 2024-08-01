@@ -38,7 +38,7 @@ public class JumpTile : EffectTile
                 if(playerTilePositions.GetPlayerAtTilePosition(targetPosition) != null) {
                     playerTilePositions.GetPlayerAtTilePosition(targetPosition).Respawn();
                 }
-                targetPlayer.MovePlayer(landedPosition + new Vector2Int(sign * moveDistance, 0), 0.2f);
+                targetPlayer.MovePlayer(landedPosition + new Vector2Int(sign * moveDistance, 0), 0.2f, 0);
             }
             else {
                 targetPlayer.Respawn();

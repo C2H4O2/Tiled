@@ -8,7 +8,6 @@ using UnityEngine.Tilemaps;
 
 public class DragTiles : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHandler
 {
-    
     private TurnTracker turnTracker;
     private TileSelection tileSelection;
     private NeighbourTileFinder neighbourTileFinder;
@@ -22,7 +21,8 @@ public class DragTiles : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDra
     private Transform defaultParent;
     private Canvas canvas;
 
-    private void Awake() {
+    private void Awake()
+    {
         turnTracker = FindAnyObjectByType<TurnTracker>();
         tileSelection = FindAnyObjectByType<TileSelection>();
         neighbourTileFinder = FindAnyObjectByType<NeighbourTileFinder>();
@@ -31,12 +31,12 @@ public class DragTiles : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDra
         deckUIController = FindAnyObjectByType<DeckUIController>();
         canvas = FindAnyObjectByType<Canvas>();
         effectTile = GetComponent<EffectTile>();
-        
     }
-    private void Start() {
+
+    private void Start()
+    {
         defaultPosition = transform.position;
         defaultParent = transform.parent;
-        
     }
 
     public void OnBeginDrag(PointerEventData eventData)
@@ -55,39 +55,44 @@ public class DragTiles : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDra
     public void OnEndDrag(PointerEventData eventData)
     {
         if (IsOutsideLayoutGroup())
-        {   // Return the tile back to its original position and parent
+        {
+            // Return the tile back to its original position and parent
             transform.position = defaultPosition;
             transform.SetParent(defaultParent);
         }
         else
-        {   // If inside the layout group, reparent it to the default parent
+        {
+            // If inside the layout group, reparent it to the default parent
             transform.SetParent(defaultParent);
         }
+
         if ((!tileSelection.PlacedTileAtPosition(tileSelection.HighlightedTilePosition)
-        && tileSelection.BoardTile.HasTile((Vector3Int)tileSelection.HighlightedTilePosition))
-        || neighbourTileFinder.FindAdjacentTiles(turnTracker.QueryTurn().PlayerPosition, tileSelection.BoardTile).Contains(tileSelection.HighlightedTilePosition))
+            && tileSelection.BoardTile.HasTile((Vector3Int)tileSelection.HighlightedTilePosition))
+            || neighbourTileFinder.FindAdjacentTiles(turnTracker.QueryTurn().PlayerPosition, tileSelection.BoardTile).Contains(tileSelection.HighlightedTilePosition))
         {
-            
-            if(effectTilePositions.TryGetEffectTile(tileSelection.HighlightedTilePosition, out var effectTileInfo)) {
+            if (effectTilePositions.TryGetEffectTile(tileSelection.HighlightedTilePosition, out var effectTileInfo))
+            {
                 effectTileInfo.EffectTile.OnRemoval();
                 if (effectTileInfo.EffectTile.IsIrreplaceable)
-                    return;   
+                    return;
             }
+
             Debug.Log("place tile");
-            
-            placeTiles.PlaceTile(effectTile,tileSelection.HighlightedTilePosition, true);
+
+            bool isTeamTwo = turnTracker.TeamTwoPlayers.Contains(turnTracker.QueryTurn());
+            bool isFacingPositive = !isTeamTwo; // Set isFacingPositive to true for Team 1 and false for Team 2
+
+            placeTiles.PlaceTile(effectTile, tileSelection.HighlightedTilePosition, triggerEffect: true, initialise: false, isFacingPositive:isFacingPositive);
+
             turnTracker.QueryTurn().PlayerInventory.RemoveTile(effectTile);
             turnTracker.QueryTurn().PlayerInventory.DrawTile();
             deckUIController.DisplayDeck();
-            turnTracker.MovesLeft-=1;
+            turnTracker.MovesLeft -= 1;
             turnTracker.QueryTurn().UpdateAdjacentTiles();
         }
 
-      
         turnTracker.TriggerDragDelay();
-       
     }
-    
 
     private bool IsOutsideLayoutGroup()
     {

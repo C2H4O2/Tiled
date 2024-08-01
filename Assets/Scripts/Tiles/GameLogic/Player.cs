@@ -42,19 +42,15 @@ public class Player : MonoBehaviour
 
     private void Update() {
         if(CanMove()) {
-            //Debug.Log("Move to" + tileSelection.HighlightedTilePosition);
             MovePlayer(tileSelection.HighlightedTilePosition, 0.2f);
-            turnTracker.MovesLeft-=1;
-            UpdateAdjacentTiles();
-            playerTilePositions.UpdateAllPlayerTilePositions();
         }
         
         if(turnTracker.MovesLeft <= 0 && turnTracker.QueryTurn() == this) {
             StartCoroutine(DelayForSeconds(1f));
-            //Debug.Log("Switch turns");
             turnTracker.CycleThroughTurn();
         }   
     }
+
     private bool CanMove() {
         if(!(turnTracker.QueryTurn() == this)) 
             return false;
@@ -75,23 +71,29 @@ public class Player : MonoBehaviour
         yield return new WaitForSeconds(seconds);
     }
 
-    public void MovePlayer(Vector2Int cellPosition, float timeToMove) {
-        transform.LeanMove(tileSelection.CellToWorld(cellPosition), timeToMove).setEaseOutCirc();
-        //transform.position = tileSelection.CellToWorld(cellPosition);
+    public void MovePlayer(Vector2Int cellPosition, float timeToMove, int moveDecrease = 1) {
+    transform.LeanMove(tileSelection.CellToWorld(cellPosition), timeToMove).setEaseOutCirc().setOnComplete(() => {
         playerPosition = cellPosition;
         playerTilePositions.UpdateAllPlayerTilePositions();
-        
+
         if (effectTilePositions.TryGetEffectTile(cellPosition, out var effectTileInfo)) {
             effectTileInfo.EffectTile.OnLand(cellPosition);
         } else {
             Debug.LogWarning($"No effect tile to land on at {cellPosition}");
         }
-    }
+
+        turnTracker.MovesLeft -= moveDecrease;
+        UpdateAdjacentTiles();
+        playerTilePositions.UpdateAllPlayerTilePositions();
+    });
+}
+
 
     public void MovePlayerWithoutTriggeringEffect(Vector2Int cellPosition, float timeToMove) {
-        transform.LeanMove(tileSelection.CellToWorld(cellPosition), timeToMove).setEaseOutCirc();
-        playerPosition = cellPosition;
-        playerTilePositions.UpdateAllPlayerTilePositions();
+        transform.LeanMove(tileSelection.CellToWorld(cellPosition), timeToMove).setEaseOutCirc().setOnComplete(() => {
+            playerPosition = cellPosition;
+            playerTilePositions.UpdateAllPlayerTilePositions();
+        });
     }
 
     public void UpdateAdjacentTiles() {
@@ -108,6 +110,5 @@ public class Player : MonoBehaviour
         else {
             Debug.Log("You killed" + nameTag);
         }
-        
     }
 }

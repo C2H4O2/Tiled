@@ -20,6 +20,6 @@ public class TurnIndicator : MonoBehaviour
         SpriteRenderer spriteRenderer = currentPlayerTransform.GetComponent<SpriteRenderer>();
         float spriteHeight = spriteRenderer.bounds.size.y;
 
-        indicatorArrow.transform.localPosition = new Vector3(0, spriteHeight + 1.5f, 0);
+        indicatorArrow.transform.localPosition = new Vector3(0, spriteHeight + 1.75f, 0);
     }
 }

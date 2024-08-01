@@ -18,7 +18,7 @@ public class PartyPopperTile : EffectTile
         foreach (var key in keys)
         {
             if (effectTilePositions.TryGetEffectTile(key, out var effectTileInfo))
-                placeTiles.PartyPopperPlace(effectTileInfo.EffectTile, key, effectTileInfo.IsFacingPositive);
+                placeTiles.PlaceTile(effectTileInfo.EffectTile, key, false, effectTileInfo.IsFacingPositive);
         }
     }
 }

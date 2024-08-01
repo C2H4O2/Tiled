@@ -14,7 +14,7 @@ public class WinTileSetter : MonoBehaviour
     }
     private void Start() {
         EffectTile WinEffectTile = winConditionTilePrefab.GetComponent<WinConditionTile>();
-        placeTiles.InitialiseTile(WinEffectTile, blueBasePos, true);
-        placeTiles.InitialiseTile(WinEffectTile, redBasePos, false);
+        placeTiles.PlaceTile(WinEffectTile, blueBasePos, initialise:true, isFacingPositive:true);
+        placeTiles.PlaceTile(WinEffectTile, redBasePos, initialise:true, isFacingPositive:false);
     }
 }
