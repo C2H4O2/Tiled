@@ -110,3 +110,6 @@ MonoBehaviour:
   isIrreplaceable: 0
   isTrap: 0
   description: 
+  invalidTiles:
+  - {fileID: -1411344870846804686, guid: a7ed1e6ff662c5e469e2e86a1e0ad05f, type: 3}
+  - {fileID: 4065562705236102767}
