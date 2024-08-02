@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PenguinTile : EffectTile
 {
+    [SerializeField] private List<EffectTile> invalidTiles;
     public override void OnLand(Vector2Int landedPosition)
     {
         EffectTilePositions effectTilePositions = FindAnyObjectByType<EffectTilePositions>();
@@ -26,7 +27,7 @@ public class PenguinTile : EffectTile
                 targetPosition += new Vector2Int(sign*1,0);
             }
             if(effectTilePositions.TryGetEffectTile(targetPosition, out var effectTileInfoEnd)) {
-                if(effectTileInfoEnd.EffectTile == effectTileInfo.EffectTile) {
+                if(invalidTiles.Contains(effectTileInfoEnd.EffectTile) && (effectTileInfoEnd.IsFacingPositive != effectTileInfo.IsFacingPositive) ) {
                     targetPlayer.MovePlayerWithoutTriggeringEffect(targetPosition, 0.2f);
                 }
                 else {
