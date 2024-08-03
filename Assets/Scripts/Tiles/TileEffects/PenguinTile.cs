@@ -26,15 +26,8 @@ public class PenguinTile : EffectTile
                 }
                 targetPosition += new Vector2Int(sign*1,0);
             }
-            if(effectTilePositions.TryGetEffectTile(targetPosition, out var effectTileInfoEnd)) {
-                if(invalidTiles.Contains(effectTileInfoEnd.EffectTile) && (effectTileInfoEnd.IsFacingPositive != effectTileInfo.IsFacingPositive) ) {
-                    targetPlayer.MovePlayerWithoutTriggeringEffect(targetPosition, 0.2f);
-                }
-                else {
-                    targetPlayer.MovePlayer(targetPosition, 0.2f, 0);
-                }
-                //fix jump tile and penguin interaction
-            }
+            targetPlayer.MovePlayerWithoutTriggeringEffect(targetPosition, 0.2f);
+            
             
         }
     }
