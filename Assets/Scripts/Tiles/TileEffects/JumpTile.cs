@@ -4,15 +4,12 @@ using UnityEngine;
 
 public class JumpTile : EffectTile
 {
-    private PlayerTilePositions playerTilePositions;
-    private EffectTilePositions effectTilePositions;
-    private TileSelection tileSelection;
     [SerializeField] private int moveDistance;
     public override void OnLand(Vector2Int landedPosition)
     {
-        playerTilePositions = FindAnyObjectByType<PlayerTilePositions>();
-        effectTilePositions = FindAnyObjectByType<EffectTilePositions>();
-        tileSelection = FindAnyObjectByType<TileSelection>();
+        PlayerTilePositions playerTilePositions = FindAnyObjectByType<PlayerTilePositions>();
+        EffectTilePositions effectTilePositions = FindAnyObjectByType<EffectTilePositions>();
+        TileSelection tileSelection = FindAnyObjectByType<TileSelection>();
 
         Player targetPlayer = playerTilePositions.GetPlayerAtTilePosition(landedPosition);
 

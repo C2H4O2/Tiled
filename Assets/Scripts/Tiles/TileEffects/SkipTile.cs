@@ -4,10 +4,8 @@ using UnityEngine;
 
 public class SkipTile : EffectTile
 {
-    private TurnTracker turnTracker;
-    
     public override void OnLand(Vector2Int tilePosition) {
-        turnTracker = FindAnyObjectByType<TurnTracker>();
+        TurnTracker turnTracker = FindAnyObjectByType<TurnTracker>();
         turnTracker.CycleThroughTurn();
     }
 }

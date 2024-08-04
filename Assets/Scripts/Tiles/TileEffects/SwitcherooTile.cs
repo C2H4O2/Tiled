@@ -5,26 +5,24 @@ using UnityEngine;
 
 public class SwitcherooTile : EffectTile
 {
-    private TurnTracker turnTracker;
-    private PlayerTilePositions playerTilePositions;
     public override void OnLand(Vector2Int landedPosition)
     {
-        turnTracker = FindAnyObjectByType<TurnTracker>();
-        playerTilePositions = FindAnyObjectByType<PlayerTilePositions>();
+        TurnTracker turnTracker = FindAnyObjectByType<TurnTracker>();
+        PlayerTilePositions playerTilePositions = FindAnyObjectByType<PlayerTilePositions>();
         Player player = playerTilePositions.GetPlayerAtTilePosition(landedPosition);
         if(turnTracker.TeamOnePlayers.Contains(player)) {
             Player[] teamPlayers = turnTracker.TeamOnePlayers;
-            switchPositions(teamPlayers);
+            switchPositions(teamPlayers, playerTilePositions);
         }
         if(turnTracker.TeamTwoPlayers.Contains(player)) {
             Player[] teamPlayers = turnTracker.TeamTwoPlayers;
-            switchPositions(teamPlayers);
+            switchPositions(teamPlayers, playerTilePositions);
         }
 
         
     }
 
-    private void switchPositions(Player[] teamPlayers) {
+    private void switchPositions(Player[] teamPlayers, PlayerTilePositions playerTilePositions) {
             Vector2Int tempPos = teamPlayers[0].PlayerPosition;
             teamPlayers[0].MovePlayerWithoutTriggeringEffect(teamPlayers[1].PlayerPosition, 0f);
             teamPlayers[1].MovePlayerWithoutTriggeringEffect(tempPos, 0f);

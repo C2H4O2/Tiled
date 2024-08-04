@@ -5,18 +5,14 @@ using UnityEngine;
 
 public class BombTile : EffectTile
 {
-    private TileSelection tileSelection;
-    private PlayerTilePositions playerTilePositions;
-    private NeighbourTileFinder neighbourTileFinder;
-    private EffectTilePositions effectTilePositions;
-    private TurnTracker turnTracker;
+
     public override void OnLand(Vector2Int tilePosition)
     {
-        tileSelection = FindAnyObjectByType<TileSelection>();
-        playerTilePositions = FindAnyObjectByType<PlayerTilePositions>();
-        neighbourTileFinder = FindAnyObjectByType<NeighbourTileFinder>();
-        effectTilePositions = FindAnyObjectByType<EffectTilePositions>();
-        turnTracker = FindAnyObjectByType<TurnTracker>();
+        TileSelection tileSelection = FindAnyObjectByType<TileSelection>();
+        PlayerTilePositions playerTilePositions = FindAnyObjectByType<PlayerTilePositions>();
+        NeighbourTileFinder neighbourTileFinder = FindAnyObjectByType<NeighbourTileFinder>();
+        EffectTilePositions effectTilePositions = FindAnyObjectByType<EffectTilePositions>();
+        TurnTracker turnTracker = FindAnyObjectByType<TurnTracker>();
         if(playerTilePositions.GetPlayerAtTilePosition(tilePosition) == turnTracker.QueryTurn()) {
             turnTracker.CycleThroughTurn();
         }

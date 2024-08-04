@@ -4,12 +4,9 @@ using UnityEngine;
 
 public class PartyPopperTile : EffectTile
 {
-    private EffectTilePositions effectTilePositions;
-    private PlaceTiles placeTiles;
-
     public override void OnLand(Vector2Int landedPosition) {
-        effectTilePositions = FindAnyObjectByType<EffectTilePositions>();
-        placeTiles = FindAnyObjectByType<PlaceTiles>();
+        EffectTilePositions effectTilePositions = FindAnyObjectByType<EffectTilePositions>();
+        PlaceTiles placeTiles = FindAnyObjectByType<PlaceTiles>();
         
         effectTilePositions.ScrambleEffectTiles();
 

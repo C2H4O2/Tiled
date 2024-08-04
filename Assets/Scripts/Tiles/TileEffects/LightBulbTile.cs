@@ -5,9 +5,6 @@ using UnityEngine.Tilemaps;
 
 public class LightBulbTile : EffectTile
 {
-    private LightController lightController;
-    private TileSelection tileSelection;
-    private EffectTilePositions effectTilePositions;
     [SerializeField] private Tile lightOnTile;
     [SerializeField] private Tile lightOffTile;
 
@@ -17,9 +14,9 @@ public class LightBulbTile : EffectTile
 
     public override void OnLand(Vector2Int landedPosition)
     {
-        tileSelection = FindAnyObjectByType<TileSelection>();
-        lightController = FindAnyObjectByType<LightController>();
-        effectTilePositions = FindAnyObjectByType<EffectTilePositions>();
+        TileSelection tileSelection = FindAnyObjectByType<TileSelection>();
+        LightController lightController = FindAnyObjectByType<LightController>();
+        EffectTilePositions effectTilePositions = FindAnyObjectByType<EffectTilePositions>();
         
         lightController.ToggleGlobalLight();
         
