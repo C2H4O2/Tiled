@@ -6,7 +6,7 @@ public class TurnTracker : MonoBehaviour
 {
     [SerializeField] private Player[] teamOnePlayers;
     [SerializeField] private Player[] teamTwoPlayers;
-    private Player[] turnOrder;
+    [SerializeField] private Player[] turnOrder;
     private ushort turn = 0;
     private Player currentPlayerTurn;
     private int movesLeft;
@@ -25,9 +25,6 @@ public class TurnTracker : MonoBehaviour
         
         currentPlayerTurn = turnOrder[0];
         movesLeft = PityDiceRoll();
-        //movesLeft = Random.Range(4,7);
-        currentPlayerTurn.FirstTurn = false;
-        
     }
     private void Start() {
         OnTurnChange.Invoke();

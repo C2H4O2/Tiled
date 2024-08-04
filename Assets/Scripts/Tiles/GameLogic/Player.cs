@@ -10,8 +10,9 @@ public class Player : MonoBehaviour
     [SerializeField] private string nameTag;
     [SerializeField] private Vector2Int startingPosition;
     [SerializeField] private Vector2Int playerPosition;
+    [SerializeField] private Vector2Int previousPlayerPosition;
     [SerializeField] private Vector2Int[] adjacentTilesToPlayer;
-    private bool firstTurn = true;
+    private bool initialised = false;
     
     private TurnTracker turnTracker;
     private TileSelection tileSelection;
@@ -24,7 +25,9 @@ public class Player : MonoBehaviour
     public Vector2Int PlayerPosition { get => playerPosition; }
     public PlayerInventory PlayerInventory { get => playerInventory; set => playerInventory = value; }
     public Vector2Int StartingPosition { get => startingPosition; }
-    public bool FirstTurn { get => firstTurn; set => firstTurn = value; }
+    
+    public Vector2Int PreviousPlayerPosition { get => previousPlayerPosition; set => previousPlayerPosition = value; }
+    public bool Initialised { get => initialised; set => initialised = value; }
 
     private void Awake() {
         turnTracker = FindAnyObjectByType<TurnTracker>();
@@ -72,7 +75,8 @@ public class Player : MonoBehaviour
     }
 
     public void MovePlayer(Vector2Int cellPosition, float timeToMove, int moveDecrease = 1) {
-    transform.LeanMove(tileSelection.CellToWorld(cellPosition), timeToMove).setEaseOutCirc().setOnComplete(() => {
+        previousPlayerPosition = playerPosition;
+        transform.LeanMove(tileSelection.CellToWorld(cellPosition), timeToMove).setEaseOutCirc().setOnComplete(() => {
         playerPosition = cellPosition;
         playerTilePositions.UpdateAllPlayerTilePositions();
 
@@ -90,6 +94,7 @@ public class Player : MonoBehaviour
 
 
     public void MovePlayerWithoutTriggeringEffect(Vector2Int cellPosition, float timeToMove) {
+        previousPlayerPosition = playerPosition;
         transform.LeanMove(tileSelection.CellToWorld(cellPosition), timeToMove).setEaseOutCirc().setOnComplete(() => {
             playerPosition = cellPosition;
             playerTilePositions.UpdateAllPlayerTilePositions();
@@ -103,12 +108,15 @@ public class Player : MonoBehaviour
     public void Respawn() {
         transform.position = tileSelection.CellToWorld(startingPosition);
         playerPosition = startingPosition;
-        if(turnTracker.QueryTurn() == this && !firstTurn){
+        if(turnTracker.QueryTurn() == this && initialised){
             turnTracker.CycleThroughTurn();
-            Debug.Log("You died");
+            Debug.Log("You killed" + nameTag);
+        }
+        else if(!initialised) {
+            return;
         }
         else {
-            Debug.Log("You killed" + nameTag);
+            Debug.Log("You died");
         }
     }
 }
