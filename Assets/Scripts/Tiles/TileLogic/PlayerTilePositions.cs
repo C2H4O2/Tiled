@@ -29,7 +29,9 @@ public class PlayerTilePositions : MonoBehaviour
     public void UpdateAllPlayerTilePositions() {
         for (int i = 0; i < players.Length; i++) {
             playerPositions[i] = players[i].PlayerPosition;
+            players[i].UpdateAdjacentTiles();
         }
+        
     }
 
     public Player GetPlayerAtTilePosition(Vector2Int tilePosition) {
