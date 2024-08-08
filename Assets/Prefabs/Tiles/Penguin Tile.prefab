@@ -104,12 +104,9 @@ MonoBehaviour:
   tileToPlace: {fileID: 11400000, guid: a6b8cb5de8ae42a4f99c0a3509d78f8d, type: 2}
   blueTile: {fileID: 0}
   redTile: {fileID: 0}
-  id: 4
+  id: 11
   isDirectional: 1
   isIndestructable: 0
   isIrreplaceable: 0
   isTrap: 0
-  description: 
-  invalidTiles:
-  - {fileID: -1411344870846804686, guid: a7ed1e6ff662c5e469e2e86a1e0ad05f, type: 3}
-  - {fileID: 4065562705236102767}
+  description: Makes you slide tile you reach a trap or a blank tile

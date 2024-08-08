@@ -102,9 +102,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tileToPlace: {fileID: 11400000, guid: f5b8cccb43dc4784c9873feac8f47150, type: 2}
+  blueTile: {fileID: 0}
+  redTile: {fileID: 0}
   id: 9
   isDirectional: 0
   isIndestructable: 0
   isIrreplaceable: 0
-  description: Jellyfish take over adjacent placed tiles when stepped on
+  isTrap: 0
+  description: Replaces adjacent tiles with jellyfish
   jellyFishClone: {fileID: 6423086139711857395, guid: 27dc826e55c5d9b4aaf5b1144f54139f, type: 3}
