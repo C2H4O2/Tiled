@@ -109,5 +109,4 @@ MonoBehaviour:
   isIndestructable: 0
   isIrreplaceable: 1
   isTrap: 1
-  description: Kills opponents but your team can walk over them (faces your team
-    if it belongs to you)
+  description: A walkable tile for you but not your opponents

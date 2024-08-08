@@ -6382,11 +6382,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7246596575568772492, guid: b22c4973443a812409f0872cd48678a0, type: 3}
       propertyPath: rareTiles.Array.size
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7246596575568772492, guid: b22c4973443a812409f0872cd48678a0, type: 3}
       propertyPath: commonTiles.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7246596575568772492, guid: b22c4973443a812409f0872cd48678a0, type: 3}
       propertyPath: uniqueTiles.Array.size

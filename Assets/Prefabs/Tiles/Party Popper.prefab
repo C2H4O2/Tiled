@@ -102,7 +102,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tileToPlace: {fileID: 11400000, guid: b2e5d5c5d76ba6146824a781bd5f3020, type: 2}
-  id: 0
+  blueTile: {fileID: 0}
+  redTile: {fileID: 0}
+  id: 10
   isDirectional: 0
   isIndestructable: 0
-  description: Scramble Placed Tiles
+  isIrreplaceable: 0
+  isTrap: 0
+  description: Scramble placed tiles

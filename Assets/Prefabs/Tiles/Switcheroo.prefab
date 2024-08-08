@@ -104,8 +104,9 @@ MonoBehaviour:
   tileToPlace: {fileID: 11400000, guid: cd5ad55a1caa7914eba96a43fa91e2d1, type: 2}
   blueTile: {fileID: 0}
   redTile: {fileID: 0}
-  id: 1
+  id: 3
   isDirectional: 0
   isIndestructable: 0
   isIrreplaceable: 0
-  description: Switch spots with your teammate
+  isTrap: 0
+  description: Switch positions with your teammate
