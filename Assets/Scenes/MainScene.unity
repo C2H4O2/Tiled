@@ -6390,7 +6390,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7246596575568772492, guid: b22c4973443a812409f0872cd48678a0, type: 3}
       propertyPath: uniqueTiles.Array.size
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7246596575568772492, guid: b22c4973443a812409f0872cd48678a0, type: 3}
       propertyPath: epicTiles.Array.data[2]
@@ -6456,6 +6456,10 @@ PrefabInstance:
       propertyPath: uniqueTiles.Array.data[2]
       value: 
       objectReference: {fileID: 4539180927304038756, guid: b7e10c3dc2eabe04bba7afe08457eed1, type: 3}
+    - target: {fileID: 7246596575568772492, guid: b22c4973443a812409f0872cd48678a0, type: 3}
+      propertyPath: uniqueTiles.Array.data[3]
+      value: 
+      objectReference: {fileID: 4539180927304038756, guid: 27dc826e55c5d9b4aaf5b1144f54139f, type: 3}
     - target: {fileID: 7246596575568772492, guid: b22c4973443a812409f0872cd48678a0, type: 3}
       propertyPath: legendaryTiles.Array.data[1]
       value: 
