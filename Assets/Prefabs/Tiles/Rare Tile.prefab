@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1263503339042224211}
   - component: {fileID: 197892467037603420}
   - component: {fileID: 5513231055486415008}
+  - component: {fileID: -8614538965046010966}
   m_Layer: 5
   m_Name: Rare Tile
   m_TagString: Untagged
@@ -102,4 +103,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tileToPlace: {fileID: 11400000, guid: 03fb4070f4b196b4dac8a7ddc41a04c8, type: 2}
+  blueTile: {fileID: 0}
+  redTile: {fileID: 0}
   id: 1
+  isDirectional: 0
+  isIndestructable: 0
+  isIrreplaceable: 0
+  isTrap: 0
+  description: 
+--- !u!114 &-8614538965046010966
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4539180927304038756}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31bc616a5d02c3240b540ffc9fb1bd70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

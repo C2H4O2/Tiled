@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1263503339042224211}
   - component: {fileID: 197892467037603420}
   - component: {fileID: -1661038139361110954}
+  - component: {fileID: 2912332334654326422}
   m_Layer: 5
   m_Name: Light Bulb Tile
   m_TagString: Untagged
@@ -108,6 +109,19 @@ MonoBehaviour:
   isDirectional: 0
   isIndestructable: 0
   isIrreplaceable: 0
+  isTrap: 0
   description: Turn on or off the lights
   lightOnTile: {fileID: 11400000, guid: a6286bac60a7f444f8abb2b5c0e4b72d, type: 2}
   lightOffTile: {fileID: 11400000, guid: 7ea6c7e4b0f013b489dde25b29eeebf1, type: 2}
+--- !u!114 &2912332334654326422
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4539180927304038756}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31bc616a5d02c3240b540ffc9fb1bd70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

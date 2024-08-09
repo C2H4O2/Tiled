@@ -25,6 +25,7 @@ public abstract class EffectTile : MonoBehaviour
     public bool IsTrap {get => isTrap; }
     public Tile BlueTile { get => blueTile; }
     public Tile RedTile { get => redTile; }
+    public string Description { get => description; set => description = value; }
 
     public abstract void OnLand(Vector2Int landedPosition);
     

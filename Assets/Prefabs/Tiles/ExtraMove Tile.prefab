@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1263503339042224211}
   - component: {fileID: 197892467037603420}
   - component: {fileID: -7193774253906987997}
+  - component: {fileID: 8544869276198229667}
   m_Layer: 5
   m_Name: ExtraMove Tile
   m_TagString: Untagged
@@ -102,7 +103,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tileToPlace: {fileID: 11400000, guid: c40d542d3ab46ef4bb1a1cce2ccc622a, type: 2}
+  blueTile: {fileID: 0}
+  redTile: {fileID: 0}
   id: 3
   isDirectional: 0
   isIndestructable: 0
+  isIrreplaceable: 0
+  isTrap: 0
   description: 1 free move
+--- !u!114 &8544869276198229667
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4539180927304038756}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31bc616a5d02c3240b540ffc9fb1bd70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
