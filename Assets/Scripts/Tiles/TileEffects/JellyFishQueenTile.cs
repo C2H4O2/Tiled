@@ -4,18 +4,14 @@ using UnityEngine;
 
 public class JellyFishQueenTile : EffectTile
 {
-    private NeighbourTileFinder neighbourTileFinder;
-    private TileSelection tileSelection;
-    private EffectTilePositions effectTilePositions;
-    private PlaceTiles placeTiles;
     [SerializeField] private EffectTile jellyFishClone;
     
     public override void OnLand(Vector2Int landedPosition)
     {
-        tileSelection = FindAnyObjectByType<TileSelection>();
-        neighbourTileFinder = FindAnyObjectByType<NeighbourTileFinder>();
-        placeTiles = FindAnyObjectByType<PlaceTiles>();
-        effectTilePositions = FindAnyObjectByType<EffectTilePositions>();
+        TileSelection tileSelection = FindAnyObjectByType<TileSelection>();
+        NeighbourTileFinder neighbourTileFinder = FindAnyObjectByType<NeighbourTileFinder>();
+        PlaceTiles placeTiles = FindAnyObjectByType<PlaceTiles>();
+        EffectTilePositions effectTilePositions = FindAnyObjectByType<EffectTilePositions>();
         Vector2Int[] adjacentTiles = neighbourTileFinder.FindAdjacentTiles(landedPosition, tileSelection.PlacedTiles);
         foreach (var tilePos in adjacentTiles) {
             if(effectTilePositions.TryGetEffectTile(tilePos, out var effectTileInfo)) {
