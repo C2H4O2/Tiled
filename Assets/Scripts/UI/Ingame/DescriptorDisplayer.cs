@@ -13,7 +13,7 @@ public class DescriptorDisplayer : MonoBehaviour, IPointerEnterHandler, IPointer
     public void OnPointerEnter(PointerEventData eventData)
     {
         EffectTile effectTile = GetComponent<EffectTile>();
-        descriptionText.DescriptionTextField.text = "Description" + effectTile.Description;
+        descriptionText.DescriptionTextField.text = effectTile.Description;
         
     }
 
@@ -21,6 +21,6 @@ public class DescriptorDisplayer : MonoBehaviour, IPointerEnterHandler, IPointer
     public void OnPointerExit(PointerEventData eventData)
     {
         descriptionText.DescriptionTextField.text = null;
-        
+
     }
 }

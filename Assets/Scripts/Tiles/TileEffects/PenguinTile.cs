@@ -31,7 +31,7 @@ public class PenguinTile : EffectTile
                 targetPlayer.MovePlayerWithoutTriggeringEffect(targetPosition, 0.2f);
             }
             else {
-                targetPlayer.MovePlayer(targetPosition, 0.2f);
+                targetPlayer.MovePlayer(targetPosition, 0.2f, 0);
             }
             if(targetPlayer == turnTracker.QueryTurn()) {
                 turnTracker.CycleThroughTurn();
